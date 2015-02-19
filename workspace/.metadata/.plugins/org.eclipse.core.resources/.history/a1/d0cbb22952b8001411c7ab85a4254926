@@ -11,11 +11,11 @@ import java.text.DecimalFormat;
 public class Employee {
 
 	// variables
-	private String name;
-	private String employeeID;
-	private String startDate;
-	private double salary;
-	private String position;
+	public String name;
+	public String employeeID;
+	public String startDate;
+	public double salary;
+	public String position;
 
 	// constructor
 	public Employee(String name, String employeeID) {
