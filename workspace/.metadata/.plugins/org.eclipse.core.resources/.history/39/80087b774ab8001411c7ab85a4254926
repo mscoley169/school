@@ -72,7 +72,7 @@ public class Employee {
 		this.position = position;
 	}
 
-	// raiseSalary, accepts a double % then calculates and adds to base salary
+	// raiseSalary, accepts a float % then calculates and adds to base salary
 	public double raiseSalary(double raise) {
 		double newSalary = ((salary * raise)/100 + (salary));
 		this.salary = newSalary;
