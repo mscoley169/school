@@ -1,0 +1,42 @@
+package edu.nashcc.dogboarding;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+public class DogBoarding {
+
+	public static void main(String[] args) {
+		// declare variables
+		String name;
+		int weight, daysBoarded;
+		float totalCost;
+		final float pricePerPound = 0.50F;
+
+		// Scanner for input
+		Scanner inputDevice = new Scanner(System.in);
+		System.out.println("Please enter the dog's name: ");
+		name = inputDevice.nextLine();
+		System.out.println("Please enter the dog's weight in pounds: ");
+		weight = inputDevice.nextInt();
+		System.out
+				.println("Please enter the number of days the dog will be boarded: ");
+		daysBoarded = inputDevice.nextInt();
+		inputDevice.close();
+
+		// math + DecimalFormat
+		totalCost = (weight * pricePerPound) * daysBoarded;
+		DecimalFormat decForm = new DecimalFormat("0.00");
+
+		// displaying total cost in a message dialog
+		JOptionPane.showMessageDialog(null, "To board " + name + " for "
+				+ daysBoarded + ", it will cost $" + decForm.format(totalCost),
+				"Happy Yappy Kennel", JOptionPane.INFORMATION_MESSAGE);
+
+		/* debugging output
+		System.out.println("totalCost: " + decForm.format(totalCost));
+		*/
+	}
+
+}
