@@ -1,0 +1,39 @@
+package edu.nashcc.metric;
+
+import java.util.Scanner;
+
+public class MetricConversion {
+	
+	float centimeters;
+	float liters;
+	
+	public static void main(String[] args) {
+
+		//variables
+		float inches;
+		float gallons;
+		
+		
+		Scanner input = new Scanner (System.in);
+		System.out.println("How many inches would you like to convert (to CM): ");
+		inches = input.nextFloat();
+		System.out.println("How many gallons would you like to convert (to liters): ");
+		gallons = input.nextFloat();
+		input.close();
+		
+		//need to call methods and do conversions, then display results
+		System.out.println(calcInToCM(inches));
+		
+		
+	}
+
+	private float calcInToCM (float in){
+		centimeters = in / 2.54F;
+		return centimeters;
+	}
+	private float calcGalToLiter (float gal){
+		liters = gal / 3.7854F;
+		return liters;
+	}
+	
+}

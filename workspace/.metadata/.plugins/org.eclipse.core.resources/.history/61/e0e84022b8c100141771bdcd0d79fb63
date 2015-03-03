@@ -1,0 +1,10 @@
+package edu.nashcc.javamath;
+
+public class JavaMath {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

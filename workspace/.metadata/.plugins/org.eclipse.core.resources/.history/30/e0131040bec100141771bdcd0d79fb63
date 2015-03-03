@@ -1,0 +1,17 @@
+package edu.nashcc.metric;
+
+public class MetricMath {
+
+	
+	float centimeters;
+	float liters;
+		
+	private float calcInToCM (float in){
+		centimeters = in / 2.54F;
+		return centimeters;
+	}
+	private float calcGalToLiter (float gal){
+		liters = gal / 3.7854F;
+		return liters;
+	}
+}

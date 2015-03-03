@@ -1,0 +1,20 @@
+package edu.nashcc.metric;
+
+public class MetricConversion {
+
+	//main method variables
+	float inches;
+	float gallons;
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public float calcCMtoIN (float in){
+		inches = in / 2.54F;
+		return inches;
+	}
+	
+}
