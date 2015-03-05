@@ -1,0 +1,11 @@
+package edu.nashcc.paint;
+
+public class TestPainting {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	
+}
