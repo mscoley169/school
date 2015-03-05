@@ -4,12 +4,7 @@ public class Sandwich {
 
 	String ingredient, bread;
 	double price;
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-	
+		
 	public Sandwich (String ingredient, String bread, double price){
 		this.ingredient = ingredient;
 		this.bread = bread;
@@ -25,7 +20,7 @@ public class Sandwich {
 	}
 	
 	public void setPrice (double price){
-		this.price = price;
+			this.price = price;
 	}
 	
 	public String getIngredient(){

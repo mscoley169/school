@@ -1,0 +1,39 @@
+package edu.nashcc.sandwich;
+
+import java.text.DecimalFormat;
+
+public class Sandwich {
+
+	String ingredient, bread;
+	double price;
+		
+	public Sandwich (String ingredient, String bread, double price){
+		this.ingredient = ingredient;
+		this.bread = bread;
+		this.price = price;
+	}
+	
+	public void setIngredient (String ingredient){ 
+		this.ingredient = ingredient;
+	}
+	
+	public void setBread (String bread){
+		this.bread = bread;
+	}
+	
+	public void setPrice (double price){
+		this.price = (Math.round(price * 100)/100);
+	}
+	
+	public String getIngredient(){
+		return this.ingredient;
+	}
+	
+	public String getBread(){
+		return this.bread;
+	}
+	
+	public double getPrice(){
+		return this.price;
+	}
+}

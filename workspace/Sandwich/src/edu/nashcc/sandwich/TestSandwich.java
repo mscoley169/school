@@ -1,0 +1,31 @@
+package edu.nashcc.sandwich;
+
+
+import java.util.Scanner;
+
+public class TestSandwich {
+
+	String ingredient, bread;
+	double price;
+
+	public static void main(String[] args) {
+		// instantiating sandwich object
+		Sandwich sandwich1 = new Sandwich("", "", 0);
+		sandwich1.setPrice(4.99D);
+
+		// getting user input to set string values
+		Scanner input = new Scanner(System.in);
+		System.out.println("What kind of main ingredient would you like? ");
+		sandwich1.setIngredient(input.nextLine());
+		System.out.println("What kind of bread would you like? ");
+		sandwich1.setBread(input.nextLine());
+		input.close();
+
+	
+		System.out.println("A " + sandwich1.getIngredient() + " sandwich on "
+				+ sandwich1.getBread() + " will cost $" + sandwich1.getPrice());
+
+
+	
+	}
+}

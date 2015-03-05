@@ -2,7 +2,13 @@ package edu.nashcc.metric;
 
 import java.util.Scanner;
 
+
 public class MetricConversion {
+
+	float centimeters;
+	float liters;
+	float inches;
+	float gallons;
 
 	public static void main(String[] args) {
 
@@ -18,8 +24,11 @@ public class MetricConversion {
 		gallons = input.nextFloat();
 		input.close();
 		
-		//need to call methods and display results
+		//call methods and display results
 	
+		MetricMath conversion = new MetricMath(inches, gallons);
+		System.out.println("Inches to CM: " + conversion.calcInToCM(inches));
+		System.out.println("Gallons to Liters: " + conversion.calcGalToLiter(gallons));
 		
 		
 	}

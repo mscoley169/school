@@ -8,7 +8,7 @@ public class MetricMath {
 	float inches;
 	float gallons;
 		
-	public MetricMath (float inches, float gallons) {
+	public MetricMath(float inches, float gallons) {
 		this.inches = inches;
 		this.gallons = gallons;
 	
