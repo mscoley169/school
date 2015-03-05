@@ -53,9 +53,9 @@ public class Painting {
 		return this.price;
 	}
 
-	public double calcCommission() {
+	public void calcCommission() {
 		this.commission = this.price * 0.2D;
-		return this.commission;
+		
 	}
 
 	// Scanner input for setting values
@@ -78,8 +78,7 @@ public class Painting {
 		//return String.format("Title: %s \nArtist: %s \nMedium: %s \nPrice: %s \nCommission: %s",
 		//				this.title, this.artist, this.medium, this.price,
 		//				this.commission);
-		double com = calcCommission();
-		System.out.println(String.format("Title: %s \nArtist: %s \nMedium: %s \nPrice: %s \nCommission: %s", this.title, this.artist, this.medium, this.price, com));
+		System.out.println(String.format("Title: %s \nArtist: %s \nMedium: %s \nPrice: %s \nCommission: %s", this.title, this.artist, this.medium, this.price, this.commission));
 		
 	}
 }
