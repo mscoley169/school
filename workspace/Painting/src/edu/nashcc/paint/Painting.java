@@ -53,9 +53,9 @@ public class Painting {
 		return this.price;
 	}
 
-	public double getCommission() {
-		commission = this.price * 0.20;
-		return this.commission;
+	public void calcCommission() {
+		this.commission = this.price * 0.2D;
+		
 	}
 
 	// Scanner input for setting values
@@ -69,16 +69,16 @@ public class Painting {
 		System.out.println("Enter the medium: ");
 		this.medium = input.nextLine();
 		System.out.println("Enter the price: ");
-		this.price = Double.parseDouble(input.nextLine());
-		input.close();
+		this.price = input.nextDouble();
+		//this.price = Double.parseDouble(input.nextLine());
+		// input.close();
 	}
 
-	public String formatData() {
-		return String
-				.format("Title: %s \nArtist: %s \nMedium: %s \nPrice: %s \nCommission: %s",
-						this.title, this.artist, this.medium, this.price,
-						this.commission);
-
+	public void formatData() {
+		//return String.format("Title: %s \nArtist: %s \nMedium: %s \nPrice: %s \nCommission: %s",
+		//				this.title, this.artist, this.medium, this.price,
+		//				this.commission);
+		System.out.println(String.format("Title: %s \nArtist: %s \nMedium: %s \nPrice: %s \nCommission: %s", this.title, this.artist, this.medium, this.price, this.commission));
+		
 	}
-
 }
