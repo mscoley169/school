@@ -50,17 +50,17 @@ public class Painting {
 	}
 	
 	//Scanner input for setting values
-	public void setUserInput(Painting paint){
+	public static void setUserInput(Painting paint){
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("Enter the title: ");
-		this.title = input.nextLine();
+		String title = input.nextLine();
 		System.out.println("Enter the artist: ");
-		this.artist = input.nextLine();
+		String artist = input.nextLine();
 		System.out.println("Enter the medium: ");
-		this.medium = input.nextLine();
+		String medium = input.nextLine();
 		System.out.println("Enter the price: ");
-		this.price = Double.parseDouble(input.nextLine());
+		double price = Double.parseDouble(input.nextLine());
 		input.close();
 		}
 	

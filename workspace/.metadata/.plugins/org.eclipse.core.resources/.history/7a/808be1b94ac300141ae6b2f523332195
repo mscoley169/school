@@ -12,7 +12,7 @@ public class TestPainting {
 		Painting paint3 = new Painting("Starry Night", "Van Gogh", "oil", 100000000);
 		
 		paint1.setUserInput(paint1);
-		paint2.setUserInput(paint2);
+		//paint2.setUserInput(paint2);
 		
 		//testing stuff
 		System.out.println(paint1);
