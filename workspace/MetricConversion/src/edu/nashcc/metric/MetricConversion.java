@@ -1,3 +1,8 @@
+/*Name: Matthew S. Coley
+ * Assignments: chapter 3 programs
+ * Date: 3 March 2015
+ */
+
 package edu.nashcc.metric;
 
 import java.util.Scanner;

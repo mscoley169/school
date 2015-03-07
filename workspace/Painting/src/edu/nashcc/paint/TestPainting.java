@@ -12,15 +12,14 @@ public class TestPainting {
 
 		paint1.getUserInput(paint1);
 		paint2.getUserInput(paint2);
-		
-		
+
 		// testing stuff
-		//System.out.println(paint1.getTitle() + paint1.getArtist()
-		//		+ paint1.getMedium() + paint1.getPrice()
-		//		+ paint1.getCommission());
-		//System.out.println(paint2);
-		//System.out.println(paint3);
-		
+		// System.out.println(paint1.getTitle() + paint1.getArtist()
+		// + paint1.getMedium() + paint1.getPrice()
+		// + paint1.getCommission());
+		// System.out.println(paint2);
+		// System.out.println(paint3);
+
 		paint1.formattedData();
 		paint2.formattedData();
 		paint3.formattedData();
