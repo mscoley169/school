@@ -11,7 +11,7 @@ public class TestPainting {
 				100000000);
 
 		paint1.getUserInput(paint1);
-		//paint2.getUserInput(paint2);
+		paint2.getUserInput(paint2);
 		
 		
 		// testing stuff
@@ -21,9 +21,9 @@ public class TestPainting {
 		//System.out.println(paint2);
 		//System.out.println(paint3);
 		
-		paint1.formatData();
-		//System.out.println(paint2.formatData());
-		//System.out.println(paint3.formatData());
+		paint1.formattedData();
+		paint2.formattedData();
+		paint3.formattedData();
 	}
 
 }

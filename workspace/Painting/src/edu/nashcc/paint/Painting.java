@@ -1,5 +1,6 @@
 package edu.nashcc.paint;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Painting {
@@ -52,7 +53,7 @@ public class Painting {
 	public double getPrice() {
 		return this.price;
 	}
-
+	//calculating the 20% commission
 	public double calcCommission() {
 		this.commission = this.price * 0.2D;
 		return this.commission;
@@ -73,13 +74,23 @@ public class Painting {
 		//this.price = Double.parseDouble(input.nextLine());
 		// input.close();
 	}
-
-	public void formatData() {
+	//formatting the data into a string block
+	public void formattedData() {
 		//return String.format("Title: %s \nArtist: %s \nMedium: %s \nPrice: %s \nCommission: %s",
 		//				this.title, this.artist, this.medium, this.price,
 		//				this.commission);
 		double com = calcCommission();
-		System.out.println(String.format("Title: %s \nArtist: %s \nMedium: %s \nPrice: %s \nCommission: %s", this.title, this.artist, this.medium, this.price, com));
+		System.out.println(String.format("Title: %s \nArtist: %s \nMedium: %s \nPrice: %s \nCommission: %s", this.title, this.artist, this.medium, decForm(this.price), decForm(com)));
 		
+	}
+	//commission message
+	public void commissionMsg(){
+		System.out.println("There is a 20% gallery commission applied to each painting.");
+	}
+	//creating a decimal format method
+	public String decForm(double decimal)
+	{
+		DecimalFormat formatter = new DecimalFormat("$#,###.00");
+		return formatter.format(decimal);
 	}
 }
