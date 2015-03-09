@@ -3,15 +3,16 @@ package edu.nashcc.circle;
 public class Circle {
 
 	double radius, diameter, area;
-	
-	//constructors
-	public Circle(){
+
+	// constructors
+	public Circle() {
 		this.radius = 1.0D;
 		this.diameter = this.radius * 2;
 		this.area = Math.PI * this.radius * this.radius;
 	}
-	public Circle(double radius){
-		this.radius = radius;
+
+	public Circle(double radius) {
+		setRadius(radius);
 	}
 
 	public double getRadius() {
@@ -20,8 +21,16 @@ public class Circle {
 
 	public void setRadius(double radius) {
 		this.radius = radius;
-		this.diameter = this.radius * 2;
-		this.area = Math.PI * this.radius * this.radius;
+		setDiameter(radius);
+		setArea(radius);
+	}
+
+	public void setDiameter(double radius) {
+		this.diameter = radius * 2;
+	}
+
+	public void setArea(double radius) {
+		this.area = Math.PI * radius * radius;
 	}
 
 	public double getDiameter() {
@@ -31,9 +40,10 @@ public class Circle {
 	public double getArea() {
 		return area;
 	}
-	
-	//formatted data
+
+	// formatted data
 	public void getFormattedData(Circle circle) {
-		System.out.println(String.format("Radius:\t%d \nDiameter:\t%d \nArea:\t%d", this.radius, this.diameter, this.area));
+		System.out.println("Radius:\t\t" + this.radius + "\nDiameter:\t"
+				+ this.diameter + "\nArea:\t\t" + this.area + "\n");
 	}
 }
