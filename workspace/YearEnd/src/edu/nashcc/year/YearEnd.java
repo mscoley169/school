@@ -26,7 +26,7 @@ public class YearEnd {
 		Calendar cal1 = Calendar.getInstance();
 		int currentDay = cal1.get(Calendar.DAY_OF_YEAR);
 		
-		Calendar cal2 = new GregorianCalendar(2015, 11, 31);
+		Calendar cal2 = new GregorianCalendar(2015, 11, 31); // 11th month is not December, gg GregorianCalendar
 		int lastDayOfYear = cal2.get(Calendar.DAY_OF_YEAR);
 		
 		int totalDays = lastDayOfYear - currentDay;
