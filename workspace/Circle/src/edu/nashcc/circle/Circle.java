@@ -1,3 +1,9 @@
+/*Name: Matthew S. Coley
+ * Assignments: chapter 4 programs
+ * Date: 10 March 2015
+ */
+
+
 package edu.nashcc.circle;
 
 public class Circle {
