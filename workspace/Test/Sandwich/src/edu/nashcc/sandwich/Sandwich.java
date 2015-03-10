@@ -1,0 +1,44 @@
+/*Name: Matthew S. Coley
+ * Assignments: chapter 3 programs
+ * Date: 3 March 2015
+ */
+
+package edu.nashcc.sandwich;
+
+public class Sandwich {
+
+	String ingredient, bread;
+	double price;
+		
+	public Sandwich (String ingredient, String bread, double price){
+		this.ingredient = ingredient;
+		this.bread = bread;
+		this.price = price;
+	}
+	
+	public void setIngredient (String ingredient){ 
+		this.ingredient = ingredient;
+	}
+	
+	public void setBread (String bread){
+		this.bread = bread;
+	}
+	
+	public void setPrice (double price){
+			this.price = price;
+	}
+	
+	public String getIngredient(){
+		return this.ingredient;
+	}
+	
+	public String getBread(){
+		return this.bread;
+	}
+	
+	public double getPrice(){
+		return this.price;
+	}
+	
+
+}

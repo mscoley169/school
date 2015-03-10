@@ -9,7 +9,6 @@ package edu.nashcc.circle;
 public class Circle {
 
 	double radius, diameter, area;
-
 	// constructors
 	public Circle() {
 		this(1.0D);

@@ -21,8 +21,8 @@ public class CertificateOfDeposit {
 	}
 	
 	// GregorianCalendar nonsense
-	Calendar calendar = new GregorianCalendar();
-	SimpleDateFormat dateForm = new SimpleDateFormat("DD/MM/yyyy");
+	Calendar calendar = Calendar.getInstance();
+	SimpleDateFormat dateForm = new SimpleDateFormat("dd/MM/yyyy");
 	
 	
 	// getters and setters

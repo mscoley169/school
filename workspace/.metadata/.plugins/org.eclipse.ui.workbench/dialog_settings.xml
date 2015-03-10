@@ -5,8 +5,8 @@
 		<item value="88" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="792" key="dialogHeight"/>
-		<item value="1440" key="dialogWidth"/>
+		<item value="747" key="dialogHeight"/>
+		<item value="960" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -17,15 +17,17 @@
 		</list>
 	</section>
 	<section name="ImportExportAction">
-		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
+		<item value="org.eclipse.egit.ui.internal.clone.GitCloneWizard" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.egit.ui.internal.clone.gitclonecategory"/>
 		</list>
 	</section>
 	<section name="FileSystemImportWizard">
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\MSColey169\Documents\GitHub\school\workspace"/>
 			<item value="C:\Users\MSColey169\Documents\Data Files\Chapter03\StudentFiles\DebuggingExercises"/>
 			<item value="C:\Users\MSColey169\Documents\Data Files\Chapter02\StudentFiles\DebuggingExercises"/>
 			<item value="C:\Users\MSColey169\Documents\Data Files\Chapter01\StudentFiles\DebuggingExercises"/>

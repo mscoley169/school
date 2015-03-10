@@ -15,7 +15,7 @@ public class YearEnd {
 	public static void main(String[] args) {
 
 		
-		// how it SHOULD be done
+		// how it should be done
 		int now = LocalDate.now().getDayOfYear();
 		int endOfYear = LocalDate.of(2015, 12, 31).getDayOfYear();
 		System.out.println(endOfYear - now + " days until the end of the year.");
