@@ -1,0 +1,20 @@
+/* Matthew S Coley
+ * ch 4 debug
+ * 11 March 2015
+ */
+
+package edu.nashcc.debugfour;
+
+// Some circle statistics
+public class DebugFour2
+{
+	   public static void main(String args[])
+	   {
+	      double radius = 12.6D;
+	      System.out.println("Circle statistics");
+	      double area = java.lang.Math.PI * radius * radius;
+	      System.out.println("area is " + area);
+	      double diameter = 2 * radius;
+	      System.out.println("diameter is " + diameter);
+	   }
+	}
