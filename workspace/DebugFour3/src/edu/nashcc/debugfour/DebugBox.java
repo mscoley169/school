@@ -9,12 +9,13 @@ public class DebugBox
    private int width;
    private int length;
    private int height;
-//   private void FixDebugBox()
-//   {
-//     length = 1;
-//     width = 1;
-//     height = 1;
-//   }
+/*   private void FixDebugBox()
+   {
+     length = 1;
+     width = 1;
+     height = 1;
+  }
+ */ 
    public DebugBox(){
 	   this(1, 1, 1);
    }
