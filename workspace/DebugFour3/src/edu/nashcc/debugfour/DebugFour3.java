@@ -16,13 +16,13 @@ public class DebugFour3
       DebugBox box1 = new DebugBox();
       DebugBox box2 = new DebugBox(width, length, height);
       System.out.println("The dimensions of the first box are");
-      showData();
+      box1.showData();
       System.out.print("  The volume of the first box is ");
-      box1.showVolume();
+      showVolume(box1);
       System.out.println("The dimensions of the second box are");
       box2.showData();
       System.out.print("  The volume of the second box is ");
-      box2.showVolume();
+      showVolume(box2);
    }
    public static void showVolume(DebugBox aBox)
    {
