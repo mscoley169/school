@@ -1,108 +1,81 @@
 package edu.nashcc.state;
 
-public class State {
-
-	private String stateName;
+public class State
+{
+	private String state;
 	private int statePop;
-	private City capital;
-	private State.City cityName, cityPop;
+	private City capCity;
+	private City popCity;
+	private City capCityPop;
+	private City popCityPop;
 
-	// constructors
-	public State() {
-
-	}
-	public State(String stateName, int statePop){
-		this.stateName = stateName;
-		this.statePop = statePop;
-	}
 	
-	public State(String stateName, int statePop, String capCityName, int capCityPop, String popCityName, int popCityPop) {
-		this.stateName = stateName;
+	// blank constructor defaults to the (String, int) constructor using NC data
+	public State(){
+		this("North Carolina", 10054192);
+	}
+	// (String, int) constructor
+	public State(String state, int statePop){
+		this.state = state;
 		this.statePop = statePop;
-		City capital = new City(capCityName, capCityPop);
 		
-
 	}
-
-	// instantiating city objects
-	City city1Cap = new City("Raleigh", 431746);
-	City city1Pop = new City("Charlotte", 792862);
+	// six argument constructor for state + pop + city data
+	public State(String state, int statePop, String cap, int pop, String city, int cityPop)
+		{
+			this.state = state;
+			this.statePop = statePop;
+			City capital = new City(city, cityPop);
+			City populous = new City(city, cityPop);
+			State.City population = new State.City(cap, pop);
+		}
 	
-//	City city2 = new City("Columbia", 129272, "Columbia", 129272);
-	String capCityName = city1Cap.getCapCityName();
-	int capCityPop = city1Cap.getCapCityPop();
-	String popCityName = city1Pop.getPopCityName();
-	int popCityPop = city1Pop.getPopCityPop();
-//	String popCityName = city1Cap.getPopCityName();
-//	int popCityPop = city1Cap.getPopCityPop();
-
-	// getters/setters
-
+	
+//		getters and setters
+	
 	public String getStateData() {
-		return this.stateName + "\t" + this.statePop + "\n" + this.capCityName
-				+ "\t\t" + this.capCityPop + "\n" + this.popCityName + "\t"
+		return this.state + "\t" + this.statePop + "\n" + this.capCity
+				+ "\t\t" + this.capCityPop + "\n" + this.popCity + "\t"
 				+ this.popCityPop;
 	}
-
-	public String getStateName() {
-		return stateName;
-	}
-
-	public void setStateName(String stateName) {
-		this.stateName = stateName;
-	}
-
-	public int getStatePop() {
-		return statePop;
-	}
-
-	public void setStatePop(int statePop) {
-		this.statePop = statePop;
-	}
-
-	// city class
-	private class City {
-		private String capCityName, popCityName;
-		private int capCityPop, popCityPop;
-
-		public City(String cityName, int cityPop) {
-// error, fix
-//			this.cityName = cityName;
-//			this.cityPop = cityPop;
-
+	
+	public String getStateName()
+		{
+			return state;
 		}
-
-		public String getCapCityName() {
-			return capCityName;
+	public int getStatePopulation()
+		{
+			return statePop;
 		}
-
-		public void setCapCityName(String capCityName) {
-			this.capCityName = capCityName;
+	
+	
+	// inner class for City objects
+	private class City
+		{
+			private String cityName;
+			private int cityPop;
+			public City(String city, int cityPop)
+				{
+					cityName = city;
+					cityPop = cityPop;
+				}
+			public void displayCity()
+				{
+					System.out.println("City Name: " + cityName);
+					System.out.println("City Population: " + cityPop);
+				}
+			public String getCityName() {
+				return cityName;
+			}
+			public void setCityName(String cityName) {
+				this.cityName = cityName;
+			}
+			public int getCityPop() {
+				return cityPop;
+			}
+			public void setCityPop(int cityPop) {
+				this.cityPop = cityPop;
+			}
+			
 		}
-
-		public String getPopCityName() {
-			return popCityName;
-		}
-
-		public void setPopCityName(String popCityName) {
-			this.popCityName = popCityName;
-		}
-
-		public int getCapCityPop() {
-			return capCityPop;
-		}
-
-		public void setCapCityPop(int capCityPop) {
-			this.capCityPop = capCityPop;
-		}
-
-		public int getPopCityPop() {
-			return popCityPop;
-		}
-
-		public void setPopCityPop(int popCityPop) {
-			this.popCityPop = popCityPop;
-		}
-
-	}
 }
