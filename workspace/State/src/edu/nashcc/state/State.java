@@ -35,7 +35,7 @@ public class State
 	
 	public String getStateData() {
 		return this.state + "\t" + this.statePop + "\n" + this.capCity
-				+ "\t\t" + this.capCityPop + "\n" + this.popCity + "\t"
+				+ "\t\t" + capital.getCityName() + "\n" + this.popCity + "\t"
 				+ this.popCityPop;
 	}
 	

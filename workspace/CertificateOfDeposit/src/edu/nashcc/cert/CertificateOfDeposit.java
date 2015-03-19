@@ -8,6 +8,7 @@ public class CertificateOfDeposit {
 
 	// global variables
 	String certNum, acctLastName;
+	int day, month, year;
 	GregorianCalendar issueDate, maturityDate;
 	double balance;
 
@@ -42,13 +43,20 @@ public class CertificateOfDeposit {
 		return issueDate;
 	}
 	public void setIssueDate(GregorianCalendar issueDate) {
-		this.issueDate = issueDate;
+		day = issueDate.get(Calendar.DAY_OF_MONTH);
+		month = issueDate.get(Calendar.MONTH);
+		year = issueDate.get(Calendar.YEAR);
+		
 	}
 	public GregorianCalendar getMaturityDate() {
 		return maturityDate;
 	}
-	public void setMaturityDate(GregorianCalendar maturityDate) {
-		this.maturityDate = maturityDate;
+	public GregorianCalendar setMaturityDate(GregorianCalendar issueDate) {
+		setIssueDate(issueDate);
+		issueDate.add(Calendar.YEAR, 1);
+		return maturityDate;
+		
+		
 	}
 	public double getBalance() {
 		return balance;
