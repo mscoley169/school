@@ -1,81 +1,83 @@
 package edu.nashcc.state;
 
-public class State
-{
-	private String state;
+public class State {
+	private String stateName;
 	private int statePop;
-	private City capCity;
-	private City popCity;
-	private City capCityPop;
-	private City popCityPop;
-
-	
+	private City capCity, popCity;
+ 
 	// blank constructor defaults to the (String, int) constructor using NC data
-	public State(){
+	public State() {
 		this("North Carolina", 10054192);
 	}
+ 
 	// (String, int) constructor
-	public State(String state, int statePop){
-		this.state = state;
+	public State(String state, int statePop) {
+		this.stateName = state;
 		this.statePop = statePop;
-		
+ 
 	}
+ 
 	// six argument constructor for state + pop + city data
-	public State(String state, int statePop, String cap, int pop, String city, int cityPop)
-		{
-			this.state = state;
-			this.statePop = statePop;
-			City capital = new City(city, cityPop);
-			City populous = new City(city, cityPop);
-			State.City population = new State.City(cap, pop);
-		}
-	
-	
-//		getters and setters
+	public State(String state, int statePop, String capCityName, int capCityPop, String popCityName,
+			int popCityPop) {
+		this.stateName = state;
+		this.statePop = statePop;
+		capCity = new City(capCityName, capCityPop);
+		popCity = new City(popCityName, popCityPop);
+	}
+ 
+	// getters and setters 
+
 	
 	public String getStateData() {
-		return this.state + "\t" + this.statePop + "\n" + this.capCity
-				+ "\t\t" + capital.getCityName() + "\n" + this.popCity + "\t"
-				+ this.popCityPop;
+		StringBuilder sb = new StringBuilder();
+		sb.append(stateName + "\t\t");
+		sb.append(statePop + "\n");
+		sb.append(capCity.getCityName() + "\t\t");
+		sb.append(capCity.getCityPop() + "\n");
+		sb.append(popCity.getCityName() + "\t\t");
+		sb.append(popCity.getCityPop());
+		return sb.toString();
 	}
-	
-	public String getStateName()
-		{
-			return state;
-		}
-	public int getStatePopulation()
-		{
-			return statePop;
-		}
-	
-	
+ 
+	public String getStateName() {
+		return stateName;
+	}
+ 
+	public int getStatePopulation() {
+		return statePop;
+	}
+ 
 	// inner class for City objects
-	private class City
-		{
-			private String cityName;
-			private int cityPop;
-			public City(String city, int cityPop)
-				{
-					cityName = city;
-					cityPop = cityPop;
-				}
-			public void displayCity()
-				{
-					System.out.println("City Name: " + cityName);
-					System.out.println("City Population: " + cityPop);
-				}
-			public String getCityName() {
-				return cityName;
-			}
-			public void setCityName(String cityName) {
-				this.cityName = cityName;
-			}
-			public int getCityPop() {
-				return cityPop;
-			}
-			public void setCityPop(int cityPop) {
-				this.cityPop = cityPop;
-			}
-			
+	private class City {
+		private String cityName;
+		private int cityPop;
+ 
+		public City(String name, int pop) {
+			setCityName(name);
+			setCityPop(pop);
 		}
+ 
+		public void displayCity() {
+			System.out.println("City Name: " + getCityName());
+			System.out.println("City Population: " + getCityPop());
+		}
+ 
+		public String getCityName() {
+			return cityName;
+		}
+ 
+		public void setCityName(String cityName) {
+			this.cityName = cityName;
+		}
+ 
+		public int getCityPop() {
+			return cityPop;
+		}
+ 
+		public void setCityPop(int cityPop) {
+			this.cityPop = cityPop;
+		}
+ 
+	}
 }
