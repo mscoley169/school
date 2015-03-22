@@ -1,0 +1,19 @@
+package edu.nashcc.state;
+
+
+public class TestState {
+
+	public static void main(String[] args) {
+
+		
+		State state1 = new State("North Carolina", 10054192, "Raleigh", 431746, "Charlotte", 792862);
+
+		state1.getStateData();
+		
+	// City("Raleigh", 431746);
+	// ("Charlotte", 792862);
+	// ("Columbia", 129272, "Columbia", 129272);
+		
+	}
+
+}

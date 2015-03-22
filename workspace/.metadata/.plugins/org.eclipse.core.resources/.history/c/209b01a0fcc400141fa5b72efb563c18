@@ -1,0 +1,19 @@
+package edu.nashcc.bank;
+
+public class TestBankAccount {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BankAccount bank1 = new BankAccount();
+		BankAccount bank2 = new BankAccount();
+		BankAccount bank3 = new BankAccount();
+		BankAccount bank4 = new BankAccount();
+		
+		bank1.showValues(bank1);
+		
+		
+	}
+
+
+	
+}

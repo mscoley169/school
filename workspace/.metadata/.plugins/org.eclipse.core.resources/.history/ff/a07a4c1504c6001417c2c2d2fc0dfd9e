@@ -1,0 +1,10 @@
+package edu.nashcc.year;
+
+public class YearEnd {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

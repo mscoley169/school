@@ -1,0 +1,50 @@
+package edu.nashcc.circle;
+
+public class Circle {
+
+	double radius, diameter, area;
+
+	// constructors
+	public Circle() {
+		this.radius = 1.0D;
+		this.diameter = this.radius * 2;
+		this.area = Math.PI * this.radius * this.radius;
+	}
+
+	public Circle(double radius) {
+		this.radius = radius;
+		//this.diameter = this.radius * 2;
+		//this.area = Math.PI * this.radius * this.radius;
+	}
+
+	public double getRadius() {
+		return radius;
+	}
+
+	public void setRadius(double radius) {
+		this.radius = radius;
+		setDiameter(2 * radius);
+		setArea(Math.PI * radius * radius);
+	}
+
+	public void setDiameter(double diameter) {
+		this.diameter = diameter;
+	}
+
+	public void setArea(double area) {
+		this.area = area;
+	}
+
+	public double getDiameter() {
+		return diameter;
+	}
+
+	public double getArea() {
+		return area;
+	}
+
+	// formatted data
+	public void getFormattedData(Circle circle) {
+		System.out.println("Radius:\t" + this.radius + "\nDiameter:\t" + this.diameter + "\nArea:\t" + this.area);
+	}
+}

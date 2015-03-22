@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;state&apos; in &apos;edu.nashcc.state.State&apos; to &apos;stateName&apos;&#x0D;&#x0A;- Original project: &apos;State&apos;&#x0D;&#x0A;- Original element: &apos;edu.nashcc.state.State.state&apos;&#x0D;&#x0A;- Renamed element: &apos;edu.nashcc.state.State.stateName&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;state&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;edu.nashcc.state{State.java[State^state" name="stateName" references="true" setter="false" stamp="1426738525622" textual="false" version="1.0"/>
+</session>

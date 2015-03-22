@@ -1,0 +1,39 @@
+package edu.nashcc.state;
+
+public class State
+{
+	private String stateName;
+	private int statePopulation;
+	private City capital;
+	private State.City population;
+	public State(String state, int statepop, String cap, int pop, String city, int citypop)
+		{
+			stateName = state;
+			this.statePopulation = statepop;
+			City capital = new City(city, citypop);
+			State.City population = new State.City(cap, pop);
+		}
+	public String getStateName()
+		{
+			return stateName;
+		}
+	public int getStatePopulation()
+		{
+			return statePopulation;
+		}
+	private class City
+		{
+			private String cityName;
+			private int cityPopulation;
+			public City(String city, int citypop)
+				{
+					cityName = city;
+					cityPopulation = citypop;
+				}
+			public void displayCity()
+				{
+					System.out.println("City Name: " + cityName);
+					System.out.println("City Population: " + cityPopulation);
+				}
+		}
+}

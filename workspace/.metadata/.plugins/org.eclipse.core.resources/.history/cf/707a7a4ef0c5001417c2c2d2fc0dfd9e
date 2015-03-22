@@ -1,0 +1,5 @@
+package edu.nashcc.patient;
+
+public class Patient {
+
+}

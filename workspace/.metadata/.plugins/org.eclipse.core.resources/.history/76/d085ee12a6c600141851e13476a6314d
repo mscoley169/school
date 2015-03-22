@@ -1,0 +1,94 @@
+package edu.nashcc.state;
+
+public class State {
+
+	private String stateName;
+	private int statePop;
+
+	// constructors
+	public State() {
+
+	}
+
+	public State(String stateName, int statePop) {
+		this.stateName = stateName;
+		this.statePop = statePop;
+		String capCityName = city1.getCapCityName();
+		int capCityPop = city1.getCapCityPop();
+		String popCityName = city1.getPopCityName();
+		int popCityPop = city1.getPopCityPop();
+	}
+
+	// instantiating city objects
+	City city1 = new City("Raleigh", 431746, "Charlotte", 792862);
+	City city2 = new City("Columbia", 129272, "Columbia", 129272);
+
+	// getters/setters
+
+	public String getStateData() {
+		return this.stateName + "" + this.statePop;
+	}
+
+	public String getStateName() {
+		return stateName;
+	}
+
+	public void setStateName(String stateName) {
+		this.stateName = stateName;
+	}
+
+	public int getStatePop() {
+		return statePop;
+	}
+
+	public void setStatePop(int statePop) {
+		this.statePop = statePop;
+	}
+
+	// city class
+	private class City {
+		private String capCityName, popCityName;
+		private int capCityPop, popCityPop;
+
+		public City(String capCityName, int capCityPop, String popCityName,
+				int popCityPop) {
+			this.capCityName = capCityName;
+			this.capCityPop = capCityPop;
+			this.popCityName = popCityName;
+			this.popCityPop = popCityPop;
+		}
+
+		public String getCapCityName() {
+			return capCityName;
+		}
+
+		public void setCapCityName(String capCityName) {
+			this.capCityName = capCityName;
+		}
+
+		public String getPopCityName() {
+			return popCityName;
+		}
+
+		public void setPopCityName(String popCityName) {
+			this.popCityName = popCityName;
+		}
+
+		public int getCapCityPop() {
+			return capCityPop;
+		}
+
+		public void setCapCityPop(int capCityPop) {
+			this.capCityPop = capCityPop;
+		}
+
+		public int getPopCityPop() {
+			return popCityPop;
+		}
+
+		public void setPopCityPop(int popCityPop) {
+			this.popCityPop = popCityPop;
+		}
+
+	}
+}

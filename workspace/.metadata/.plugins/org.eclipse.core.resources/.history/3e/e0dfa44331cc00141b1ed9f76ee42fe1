@@ -1,0 +1,81 @@
+package edu.nashcc.state;
+
+public class State
+{
+	private String state;
+	private int statePop;
+	private City capCity;
+	private City popCity;
+	private City capCityPop;
+	private City popCityPop;
+
+	
+	// blank constructor defaults to the (String, int) constructor using NC data
+	public State(){
+		this("North Carolina", 10054192);
+	}
+	// (String, int) constructor
+	public State(String state, int statePop){
+		this.state = state;
+		this.statePop = statePop;
+		
+	}
+	// six argument constructor for state + pop + city data
+	public State(String state, int statePop, String cap, int pop, String city, int cityPop)
+		{
+			this.state = state;
+			this.statePop = statePop;
+			City capital = new City(city, cityPop);
+			City populous = new City(city, cityPop);
+			State.City population = new State.City(cap, pop);
+		}
+	
+	
+//		getters and setters
+	
+	public String getStateData() {
+		return this.state + "\t" + this.statePop + "\n" + this.capCity
+				+ "\t\t" + this.capCityPop + "\n" + this.popCity + "\t"
+				+ this.popCityPop;
+	}
+	
+	public String getStateName()
+		{
+			return state;
+		}
+	public int getStatePopulation()
+		{
+			return statePop;
+		}
+	
+	
+	// inner class for City objects
+	private class City
+		{
+			private String cityName;
+			private int cityPop;
+			public City(String city, int cityPop)
+				{
+					cityName = city;
+					cityPop = cityPop;
+				}
+			public void displayCity()
+				{
+					System.out.println("City Name: " + cityName);
+					System.out.println("City Population: " + cityPop);
+				}
+			public String getCityName() {
+				return cityName;
+			}
+			public void setCityName(String cityName) {
+				this.cityName = cityName;
+			}
+			public int getCityPop() {
+				return cityPop;
+			}
+			public void setCityPop(int cityPop) {
+				this.cityPop = cityPop;
+			}
+			
+		}
+}

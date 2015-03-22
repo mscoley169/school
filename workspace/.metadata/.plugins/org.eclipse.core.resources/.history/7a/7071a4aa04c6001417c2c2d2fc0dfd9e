@@ -1,0 +1,15 @@
+package edu.nashcc.year;
+
+import java.time.LocalDate;
+
+public class YearEnd {
+
+	public static void main(String[] args) {
+
+		int now = LocalDate.now().getDayOfYear();
+		int endOfYear = LocalDate.of(2015, 12, 31).getDayOfYear();
+		System.out.println(endOfYear - now + "days until the end of the year.");
+		
+	}
+
+}

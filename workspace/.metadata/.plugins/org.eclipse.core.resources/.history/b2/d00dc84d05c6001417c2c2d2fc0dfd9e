@@ -1,0 +1,27 @@
+/*Name: Matthew S. Coley
+ * Assignments: chapter 4 programs
+ * Date: 10 March 2015
+ */
+
+
+package edu.nashcc.year;
+
+import java.time.LocalDate;
+
+public class YearEnd {
+
+	public static void main(String[] args) {
+
+		
+		// how it SHOULD be done
+		int now = LocalDate.now().getDayOfYear();
+		int endOfYear = LocalDate.of(2015, 12, 31).getDayOfYear();
+		System.out.println(endOfYear - now + " days until the end of the year.");
+		
+		// how the book wants it done
+		
+		
+		
+	}
+
+}

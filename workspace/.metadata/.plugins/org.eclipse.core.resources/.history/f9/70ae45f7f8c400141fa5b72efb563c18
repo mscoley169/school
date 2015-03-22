@@ -1,0 +1,42 @@
+package edu.nashcc.bank;
+
+public class BankAccount {
+
+	//global variables
+	String accountNo, name;
+	double balance;
+	
+	public BankAccount(String accountNo, String name, double balance){
+		this.accountNo = accountNo;
+		this.name = name;
+		this.balance = balance;
+		}
+	
+	public void setAccountNo(String accountNo){
+		this.accountNo = accountNo;
+	}
+	public void setName(String name){
+		this.name = name;
+	}
+	public void setBalance(double balance){
+		this.balance = balance;
+	}
+	public String getAccountNo(){
+		return this.accountNo;
+	}
+	public String getName(){
+		return this.name;
+	}
+	public double getBalance(){
+		return this.balance;
+	}
+	public double deductMonthlyFee(double balance){
+		double newBalance = balance - 4.0D;
+		this.balance = newBalance;
+		return this.balance;
+	}
+	public static void explainAccountPolicy(){
+	System.out.println("There is a $4/month service fee that is automatically deduced from your account balance");	
+	}
+	
+}
