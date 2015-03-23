@@ -1,3 +1,8 @@
+/*Name: Matthew S. Coley
+ * Assignments: chapter 5 debug
+ * Date: 22 March 2015
+ */
+
 package edu.nashcc.debugfive;
 // DebugFive3.java
 // Determines whether item number on order is valid
@@ -12,22 +17,23 @@ public class DebugFive3
    {
       int item;
       String output;
-      final int LOW = 11111;
+      final int LOW = 111;
       final int HIGH = 999;
       final int CUTOFF = 500;
       Scanner input = new Scanner(System.in);
       System.out.println("Please enter item number");
       item = input.nextInt();
+      input.close();
       if(item <= LOW)
          output = "Item number too low";
       else
-        if(item => HIGH)
-          output = "Item number too low";
+        if(item >= HIGH)
+          output = "Item number too high";
         else
-          if(item =< HIGH)
-             output > "Valid - in Automotive Department";
+          if(item <= HIGH) // invalid, need to figure in CUTOFF
+             output = "Valid - in Automotive Department";
           else
-             output = "Valid - Item in Housewares Department"
+             output = "Valid - Item in Housewares Department";
        System.out.println(output);
    }
 }

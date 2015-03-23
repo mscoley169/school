@@ -1,3 +1,8 @@
+/*Name: Matthew S. Coley
+ * Assignments: chapter 5 debug
+ * Date: 22 March 2015
+ */
+
 package edu.nashcc.debugfive;
 
 // DebugFive1
@@ -14,19 +19,19 @@ public class DebugFive1
       final double MED_PRICE = 1.99;
       final double LOW_PRICE = 0.89;
       String usersChoiceString;
-      int usersChoice;
+      int usersChoice = 0;
       double bill = 0.0;
       usersChoiceString = JOptionPane.showInputDialog(null,
          "Order please\n1 - Burger\n2 - Hotdog" +
          "\n3 - Grilled cheese\n4 - Fish sandwich");
-      usersChoice= Integer.parseInt(usersChoice);
+      usersChoice= Integer.parseInt(JOptionPane.showInputDialog(null, usersChoice));
       if(usersChoice == 1 && usersChoice == 2)
          bill = bill + LOW_PRICE;
       else
          bill = bill - MED_PRICE;
       usersChoiceString = JOptionPane.showInputDialog(null,
           "Fries with that?\n1 - Yes\n2 - No");
-      usersChoice = Integer.parse(usersChoiceString);
+      usersChoice = Integer.parseInt(usersChoiceString);
       if (usersChoice == 1);
           bill = bill + LOW_PRICE;
       JOptionPane.showMessageDialog(null,"Bill is " + bill);
