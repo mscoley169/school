@@ -1,0 +1,18 @@
+skill 1 $17.00
+skill 2 $20.00
+skill 3 $22.00
+
+over 40 = 1.5x rate
+
+skill 2 and 3: 
+option 1 medical insurance ($32.50)
+option 2 dental insurance ($20.00)
+option 3 long-term disability insurance ($10.00)
+
+skill 3:
+retirement plan 3% gross pay
+
+calculate net pay, prompt skill level, hours worked, extra options.
+
+display hours worked, hourly rate, regular pay for 40 hours, overtime pay, total of regular and overtime, total itemized deductions, net pay after all deductions
+					if deductions > gross, error msg

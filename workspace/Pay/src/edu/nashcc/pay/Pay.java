@@ -1,3 +1,9 @@
+/* Name: Matthew S. Coley
+ * Assignment: Ch 5 programs
+ * Date 23 March 2015
+ * 
+ */
+
 package edu.nashcc.pay;
 
 import javax.swing.JOptionPane;
@@ -5,8 +11,10 @@ import javax.swing.JOptionPane;
 public class Pay {
 
 	String skillLevel, hoursWorked;
-	String medical, dental, disability;
-	double medCost, dentCost, disCost;
+	String medical, dental, disability, retirement;
+	double medCost, dentCost, disCost, retireCost;
+	double grossPay, netPay;
+	final double OVERTIME_RATE = 1.5D;
 
 	public static void main(String[] args) {
 
@@ -28,8 +36,8 @@ public class Pay {
 		medical = JOptionPane
 				.showInputDialog(null,
 						"Do you want to deduct medical insurance from your paycheck for $32.50? (Y/N)");
-		
-		switch(medical.substring(0)){
+		medical.toUpperCase();
+		switch (medical.substring(0)) {
 		case "Y":
 			medCost = 32.5;
 			break;
@@ -38,13 +46,14 @@ public class Pay {
 			break;
 		}
 		return medCost;
-	} 
-	public double inputDental(){
+	}
+
+	public double inputDental() {
 		dental = JOptionPane
 				.showInputDialog(null,
 						"Do you want to deduct dental insurance from your paycheck for $20.00? (Y/N)");
-		
-		switch(dental.substring(0)){
+		dental.toUpperCase();
+		switch (dental.substring(0)) {
 		case "Y":
 			dentCost = 20.0;
 			break;
@@ -54,13 +63,13 @@ public class Pay {
 		}
 		return dentCost;
 	}
-	public double inputDisability(){
-		disability = JOptionPane
-				.showInputDialog(
-						null,
-						"Do you want to deduct long-term disability insurance "
+
+	public double inputDisability() {
+		disability = JOptionPane.showInputDialog(null,
+				"Do you want to deduct long-term disability insurance "
 						+ "from your paycheck for $10.00? (Y/N)");
-		switch(dental.substring(0)){
+		disability.toUpperCase();
+		switch (disability.substring(0)) {
 		case "Y":
 			disCost = 10.0;
 			break;
@@ -69,5 +78,24 @@ public class Pay {
 			break;
 		}
 		return disCost;
+	}
+
+	public double inputRetirement() {
+		retirement = JOptionPane
+				.showInputDialog(null,
+						"Do you want to participate in a retirement plan of 3% per paycheck? (Y/N)");
+		switch (retirement.substring(0)) {
+		case "Y":
+			retireCost = grossPay * 0.03;
+			break;
+		case "N":
+			retireCost = 0;
+			break;
+		}
+		return retireCost;
+		}
+	
+	public void setGrossPay(int hoursWorked){
+		grossPay = hoursWorked * Integer.parseInt(skillLevel);
 	}
 }
