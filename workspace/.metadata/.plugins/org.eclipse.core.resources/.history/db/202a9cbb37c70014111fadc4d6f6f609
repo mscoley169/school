@@ -1,0 +1,23 @@
+package edu.nashcc.cert;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class TestCertificateOfDeposit {
+
+	public static void main(String[] args) {
+
+		Calendar calendar = new GregorianCalendar();
+		SimpleDateFormat dateForm = new SimpleDateFormat("yyyy-MM-DD");
+		
+		System.out.println(dateForm.format(calendar.getTime()));
+		
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Calendar calendar2 = new GregorianCalendar();
+		System.out.println(dateFormat.format(calendar2.getTime()));
+		
+		
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;DebugFive1.java&apos; to &apos;DebugFive1/src/edu.nashcc.debugfive&apos;&#x0D;&#x0A;- Original project: &apos;DebugFive1&apos;&#x0D;&#x0A;- Destination element: &apos;DebugFive1/src/edu.nashcc.debugfive&apos;&#x0D;&#x0A;- Original element: &apos;DebugFive1.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;edu.nashcc.debugfive" element1="/src&lt;{DebugFive1.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1426777742063" units="1" version="1.0"/>
+</session>

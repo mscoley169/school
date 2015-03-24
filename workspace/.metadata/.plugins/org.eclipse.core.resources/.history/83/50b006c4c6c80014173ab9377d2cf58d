@@ -1,0 +1,78 @@
+/*
+ * A switch statement allows a variable to be tested for equality against a list of values. 
+ * Each value is called a case, and the variable being switched on is checked for each case.
+ * To avoid checking each case the break keyword must be used.
+ * The syntax of a switch is:
+ * 		switch(expression){
+ *   		case value :
+ *     			//Statements
+ *     			break; //optional
+ *  		case value :
+ *     			//Statements
+ *     			break; //optional
+ *  			//You can have any number of case statements.
+ *  		default : //Optional
+ *     			//Statements
+ * 		}
+ * The following rules apply to a switch statement:
+ * 		The variable used in a switch statement can only be a byte, short, int, char or String 
+ * 		(String can only be used with Java 7 or higher).
+ * 		You can have any number of case statements within a switch. 
+ * 		Each case is followed by the value to be compared to and a colon.
+ * 		The value for a case must be the same data type as the variable in the switch 
+ * 		and it must be a constant or a literal.
+ * 		When the variable being switched on is equal to a case, the statements following 
+ * 		that case will execute until a break statement is reached.
+ * 		When a break statement is reached, the switch terminates, and the flow of control 
+ * 		jumps to the next line following the switch statement.
+ * 		Not every case needs to contain a break. If no break appears, the flow of control 
+ * 		will fall through to subsequent cases until a break is reached.
+ * 		A switch statement can have an optional default case, which must appear at the end 
+ * 		of the switch. 
+ * 		The default case can be used for performing a task when none of the cases is true. 
+ * 		No break is needed in the default case.
+ */
+
+import javax.swing.JOptionPane;
+
+public class SwitchDecisionMaking {
+
+	public static void main(String[] args) {
+		String color = JOptionPane. showInputDialog(null, 
+				"Enter a primary color.");
+		 switch (color) {
+		 	//this is an example of "fall through" 
+		 	//each case will be examined for a true condition until a break is reach
+		 	//if the condition is true, the statements will be executed
+		 	//if a break is not reached, the flow control will fall through to the next case group.
+	        case "blue":
+	        	System.out.println("BLUE");
+	            break;
+	        case "Blue":
+	            System.out.println("BLUE");
+	            break;
+	        //The key to understanding this example is realizing that you don’t have 
+	        //to code any statements at all for a case group, and that if you omit the
+	        //break statement from a case group, control falls through to the next case group. 
+	        //Thus, the case group "red" doesn’t contain any statements, but it falls through 
+	        //to the case group "Red". If either "red" or "Red" evaluates true then the statements 
+	        // within the case block will be executed.
+	        case "red":
+	        case "Red":
+	            System.out.println("RED");
+	            break;
+	        case "yellow":
+	        case "Yellow":
+	            System.out.println("YELLOW");
+	            break;
+	        default:
+	            System.out.println("INVALID COLOR CODE.");
+	        }
+		 //The example above is really only an example of how the switch works.
+		 //The best approach for the example above is to use the toLowerCase or 
+		 //toUpperCase string methods to convert the color variable before using the switch.
+		 //We will cover this approach in class.
+
+	}
+
+}

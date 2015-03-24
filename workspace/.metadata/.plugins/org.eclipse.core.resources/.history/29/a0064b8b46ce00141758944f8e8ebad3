@@ -1,0 +1,20 @@
+package edu.nashcc.book;
+
+import javax.swing.JOptionPane;
+
+public class BookStore {
+
+	public static void main(String[] args) {
+
+	String title = JOptionPane.showInputDialog(null, "Enter the title of the book: ");
+	String author = JOptionPane.showInputDialog(null, "Enter the author of the book: ");
+	Book book1 = new Book(title, author);
+	book1.setCategory("Computer Science");
+	book1.setPrice(143.28);
+	book1.setTotalPrice(143.28);
+	
+	
+	
+	}
+
+}

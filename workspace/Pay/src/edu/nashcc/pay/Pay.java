@@ -12,27 +12,80 @@ public class Pay {
 
 	String skillLevel, hoursWorked;
 	String medical, dental, disability, retirement;
-	double medCost, dentCost, disCost, retireCost;
-	double grossPay, netPay;
+	double medCost, dentCost, disCost, retireCost, totalDeductions;
+	double perHour, grossPay, overtimePay, overForty, netPay;
 	final double OVERTIME_RATE = 1.5D;
 
 	public static void main(String[] args) {
+		Pay pay1 = new Pay();
+		pay1.inputSkillLevel();
+		pay1.inputHoursWorked();
+
+		switch (pay1.getSkillLevel()) {
+		case 3:
+			pay1.inputMedical();
+			pay1.inputDental();
+			pay1.inputDisability();
+			pay1.inputRetirement();
+			break;
+		case 2:
+			pay1.inputMedical();
+			pay1.inputDental();
+			pay1.inputDisability();
+			break;
+		default:
+			break;
+		}
+
+		pay1.setGrossPay(Double.parseDouble(pay1.hoursWorked)); // pay1.setGrossPay(pay1.getHoursWorked()
+																// not working
+																
+		// testing stuff -- getGrossPay() returns 0.0, need to fix
+		System.out.println(pay1.getGrossPay());
+		System.out.println(pay1.getHoursWorked());
+		System.out.println(pay1.getSkillLevelPay());
+		System.out.println(pay1.perHour);
 
 	}
 
-	public int inputSkillLevel() {
+	public Pay() {
+
+	}
+
+	public void inputSkillLevel() {
 		skillLevel = JOptionPane.showInputDialog(null,
-				"Enter the worker skill level: ");
+				"Enter the worker skill level (1, 2, 3): ");
+	}
+
+	public int getSkillLevel() {
 		return Integer.parseInt(skillLevel);
 	}
 
-	public double inputHoursWorked() {
-		hoursWorked = JOptionPane.showInputDialog(null,
-				"Enter the total hours worked: ");
-		return Double.parseDouble(hoursWorked);
+	public double getSkillLevelPay() {
+		switch (getSkillLevel()) {
+		case 1:
+			this.perHour = 17.0;
+			break;
+		case 2:
+			this.perHour = 20.0;
+			break;
+		case 3:
+			this.perHour = 22.0;
+			break;
+		}
+		return this.perHour;
 	}
 
-	public double inputMedical() {
+	public void inputHoursWorked() {
+		this.hoursWorked = JOptionPane.showInputDialog(null,
+				"Enter the total hours worked: ");
+	}
+
+	public double getHoursWorked() {
+		return Double.parseDouble(this.hoursWorked);
+	}
+
+	public void inputMedical() {
 		medical = JOptionPane
 				.showInputDialog(null,
 						"Do you want to deduct medical insurance from your paycheck for $32.50? (Y/N)");
@@ -41,14 +94,17 @@ public class Pay {
 		case "Y":
 			medCost = 32.5;
 			break;
-		case "N":
+		default:
 			medCost = 0;
 			break;
 		}
+	}
+
+	public double getMedCost() {
 		return medCost;
 	}
 
-	public double inputDental() {
+	public void inputDental() {
 		dental = JOptionPane
 				.showInputDialog(null,
 						"Do you want to deduct dental insurance from your paycheck for $20.00? (Y/N)");
@@ -57,14 +113,17 @@ public class Pay {
 		case "Y":
 			dentCost = 20.0;
 			break;
-		case "N":
+		default:
 			dentCost = 0;
 			break;
 		}
+	}
+
+	public double getDentalCost() {
 		return dentCost;
 	}
 
-	public double inputDisability() {
+	public void inputDisability() {
 		disability = JOptionPane.showInputDialog(null,
 				"Do you want to deduct long-term disability insurance "
 						+ "from your paycheck for $10.00? (Y/N)");
@@ -73,14 +132,17 @@ public class Pay {
 		case "Y":
 			disCost = 10.0;
 			break;
-		case "N":
+		default:
 			disCost = 0;
 			break;
 		}
-		return disCost;
 	}
 
-	public double inputRetirement() {
+	public double getDisCost() {
+		return this.disCost;
+	}
+
+	public void inputRetirement() {
 		retirement = JOptionPane
 				.showInputDialog(null,
 						"Do you want to participate in a retirement plan of 3% per paycheck? (Y/N)");
@@ -88,14 +150,53 @@ public class Pay {
 		case "Y":
 			retireCost = grossPay * 0.03;
 			break;
-		case "N":
+		default:
 			retireCost = 0;
 			break;
 		}
-		return retireCost;
+	}
+
+	public double getRetireCost() {
+		return this.retireCost;
+	}
+
+	public void setGrossPay(double hoursWorked) {
+		if (hoursWorked < 41) {
+			this.grossPay = hoursWorked * this.perHour;
+		} else if (hoursWorked > 40) {
+			overForty = hoursWorked - 40;
+			setOvertimePay(overForty);
+			this.grossPay = getOvertimePay() + (hoursWorked * this.perHour);
 		}
-	
-	public void setGrossPay(int hoursWorked){
-		grossPay = hoursWorked * Integer.parseInt(skillLevel);
+
+	}
+
+	public double getGrossPay() {
+		return this.grossPay;
+	}
+
+	public void setOvertimePay(double overForty) {
+		this.overtimePay = overForty * OVERTIME_RATE;
+	}
+
+	public double getOvertimePay() {
+		return this.overtimePay;
+	}
+
+	public void setTotalDeductions() {
+		this.totalDeductions = this.medCost + this.dentCost + this.disCost
+				+ this.retireCost;
+	}
+
+	public double getTotalDeductions() {
+		return this.totalDeductions;
+	}
+
+	public void setNetPay() {
+		this.netPay = this.grossPay - this.totalDeductions;
+	}
+
+	public double getNetPay() {
+		return this.netPay;
 	}
 }

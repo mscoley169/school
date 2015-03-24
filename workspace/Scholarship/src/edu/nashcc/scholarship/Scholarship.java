@@ -22,8 +22,8 @@ public class Scholarship {
 	extraActs = Integer.parseInt(stuExActsString);
 	serviceActs = Integer.parseInt(stuServActsString);
 	
-	if(studentGPA <= 0 || studentGPA > 4){
-		System.out.println("Invalid GPA");
+	if(studentGPA <= 0 || studentGPA > 4 || extraActs < 0 || serviceActs < 0){
+		System.out.println("Invalid data, try again with acceptable ranges (0-4 GPA, no negative numbers).");
 	}
 		else if(studentGPA >= 3.8 && extraActs > 0 && serviceActs > 0) {
 			successMsg();
