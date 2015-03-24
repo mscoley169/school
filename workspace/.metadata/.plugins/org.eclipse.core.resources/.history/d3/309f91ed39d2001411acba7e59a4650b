@@ -96,16 +96,16 @@ public class Pay {
 		medical.toUpperCase();
 		switch (medical.substring(0)) {
 		case "Y":
-			this.medCost = 32.5;
+			medCost = 32.5;
 			break;
 		default:
-			this.medCost = 0;
+			medCost = 0;
 			break;
 		}
 	}
 
 	public double getMedCost() {
-		return this.medCost;
+		return medCost;
 	}
 
 	public void inputDental() {
@@ -115,16 +115,16 @@ public class Pay {
 		dental.toUpperCase();
 		switch (dental.substring(0)) {
 		case "Y":
-			this.dentCost = 20.0;
+			dentCost = 20.0;
 			break;
 		default:
-			this.dentCost = 0;
+			dentCost = 0;
 			break;
 		}
 	}
 
 	public double getDentalCost() {
-		return this.dentCost;
+		return dentCost;
 	}
 
 	public void inputDisability() {
@@ -134,10 +134,10 @@ public class Pay {
 		disability.toUpperCase();
 		switch (disability.substring(0)) {
 		case "Y":
-			this.disCost = 10.0;
+			disCost = 10.0;
 			break;
 		default:
-			this.disCost = 0;
+			disCost = 0;
 			break;
 		}
 	}
@@ -152,10 +152,10 @@ public class Pay {
 						"Do you want to participate in a retirement plan of 3% per paycheck? (Y/N)");
 		switch (retirement.substring(0)) {
 		case "Y":
-			this.retireCost = grossPay * 0.03;
+			retireCost = grossPay * 0.03;
 			break;
 		default:
-			this.retireCost = 0;
+			retireCost = 0;
 			break;
 		}
 	}
