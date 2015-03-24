@@ -45,10 +45,6 @@ public class Pay {
 		System.out.println(pay1.getHoursWorked());
 		System.out.println(pay1.getSkillLevelPay());
 		System.out.println(pay1.perHour);
-		System.out.println(pay1.getMedCost());
-		System.out.println(pay1.getDentalCost());
-		System.out.println(pay1.getDisCost());
-		System.out.println(pay1.getRetireCost());
 
 	}
 
