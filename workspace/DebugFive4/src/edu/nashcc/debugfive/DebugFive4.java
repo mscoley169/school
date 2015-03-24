@@ -18,16 +18,16 @@ public class DebugFive4
       str2 = JOptionPane.showInputDialog(null,"Enter an integer");
       two = Integer.parseInt(str2);
       str3 = JOptionPane.showInputDialog(null,"Enter an integer");
-      two = Integer.parseInt(str3);
+      three = Integer.parseInt(str3);
       str4 = JOptionPane.showInputDialog(null,"Enter an integer");
       four = Integer.parseInt(str4);
-      if(one > two & one >= three && one < four) //need to sort out logic
+      if(one > two && one > three && one > four) //need to sort out logic
          output = "Highest is " + one;
       else
-         if(two > one || two > three && two > four)
+         if(two > one & two > three & two > four)
             output = "Highest is " + two;
          else
-           if(three > one && three > two || three == four)
+           if(three > one && three > two && three > four)
               output = "Highest is " + three;
            else
               output = "Highest is " + four;
