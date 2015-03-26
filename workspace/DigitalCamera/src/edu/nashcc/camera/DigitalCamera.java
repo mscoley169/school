@@ -8,6 +8,56 @@ package edu.nashcc.camera;
 
 public class DigitalCamera {
 
+	String brand;
+	double megapixels, price;
+	
+	public DigitalCamera(){
+		this("", 0);
+	}
+	public DigitalCamera(String brand, double megapixels){
+		this.brand = brand;
+		if(megapixels > 10){
+			this.megapixels = 10;
+		}
+		else {
+			this.megapixels = megapixels;
+		}
+	}
+	
+	
+	public String getBrand() {
+		return this.brand;
+	}
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+	public double getMegapixels() {
+		return this.megapixels;
+	}
+	public void setMegapixels(double megapixels) {
+		this.megapixels = megapixels;
+	}
+	public double getPrice() {
+		return this.price;
+	}
+	public void setPrice(double megapixels) {
+		if(megapixels > 6){
+			this.price = 129;
+		}
+		else {
+			this.price = 99;
+		}
+		
+	}
+	
+	public String displayData(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("Brand:     \t" + brand + "\n");
+		sb.append("Resolution:\t" + megapixels + "\n");
+		sb.append("Price:     \t" + price + "\n");
+		return sb.toString();
+	}
+	
 	
 	
 	

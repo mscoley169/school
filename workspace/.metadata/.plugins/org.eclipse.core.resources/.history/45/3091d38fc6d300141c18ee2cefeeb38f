@@ -1,0 +1,79 @@
+
+public class Student {
+	private String lastName;
+	private String firstName;
+	private int id;
+	private double gpa;
+	private Student.Program program;
+	
+	public Student(String lastName, String firstName, int id, String program){
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.program = new Program(program, this.lastName);
+		this.id = id;
+		
+	}
+	public int getID(){
+		return this.id;
+	}
+	public void setLastName(String lastName){
+		this.lastName = lastName;
+	}
+	public String getLastName(){
+		return this.lastName;
+	}
+	public void setFirstName(String firstName){
+		this.firstName = firstName;
+	}
+	public String getFirstName(){
+		return this.firstName;
+	}
+	public void setGPA(double gpa){
+		this.gpa = gpa;
+	}
+	public double getGPA(){
+		return this.gpa;
+	}	
+	public String getAdvisor(){
+		return this.program.getAdvisor();
+	}
+	private class Program {
+		private String programOfStudy;
+		private String lastName;
+		private String advisor;
+		
+		private Program(String program, String lastName){
+			this.programOfStudy = program;
+			this.lastName = lastName;
+			this.setAdvisor();
+		}
+		
+		private void setAdvisor(){
+			switch (this.programOfStudy){
+				case "Computer Engineering":
+					this.advisor = "Wanda Tyson";
+					break;
+				case "Industrial Systems":
+					this.advisor =  "Ricky Joyner";
+					break;
+				case "Electrical Systems":
+					this.advisor =  "Tim Brown";
+					break;
+				case "Electronics Engineering":
+					char c = this.lastName.charAt(0);
+					if(c >= 56 && c <= 76 || c <= 97 && c <= 108){
+						this.advisor = "Stan Shields";
+					}
+					else if (c >= 77 && c <= 90 || c <= 109 && c <= 122){
+						this.advisor = "Ken Windham";
+					}
+					break;
+				default:
+					this.advisor = "Program with unspecified advisor.";
+			}
+		}
+		private String getAdvisor(){
+			return this.advisor;
+		}
+	}
+}

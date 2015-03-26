@@ -9,8 +9,10 @@ package edu.nashcc.camera;
 public class TestDigitalCamera {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
+		// testy mctesterson
+		DigitalCamera cam1 = new DigitalCamera("Nikon", 9);
+		cam1.displayData();
 	}
 
 }

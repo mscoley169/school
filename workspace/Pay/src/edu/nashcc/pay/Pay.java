@@ -10,10 +10,10 @@ import javax.swing.JOptionPane;
 
 public class Pay {
 
-	String skillLevel, hoursWorked;
+	String skillLevel;
 	String medical, dental, disability, retirement;
 	double medCost, dentCost, disCost, retireCost, totalDeductions;
-	double perHour, grossPay, overtimePay, overForty, netPay;
+	double hoursWorked, perHour, grossPay, overtimePay, overForty, netPay;
 	final double OVERTIME_RATE = 1.5D;
 
 	public static void main(String[] args) {
@@ -37,7 +37,7 @@ public class Pay {
 			break;
 		}
 
-		pay1.setGrossPay(Double.parseDouble(pay1.hoursWorked)); // pay1.setGrossPay(pay1.getHoursWorked()
+		pay1.setGrossPay(pay1.hoursWorked); // pay1.setGrossPay(pay1.getHoursWorked()
 																// not working
 																
 		// testing stuff -- getGrossPay() returns 0.0, need to fix
@@ -81,12 +81,12 @@ public class Pay {
 	}
 
 	public void inputHoursWorked() {
-		this.hoursWorked = JOptionPane.showInputDialog(null,
-				"Enter the total hours worked: ");
+		this.hoursWorked = Double.parseDouble(JOptionPane.showInputDialog(null,
+				"Enter the total hours worked: "));
 	}
 
 	public double getHoursWorked() {
-		return Double.parseDouble(this.hoursWorked);
+		return this.hoursWorked;
 	}
 
 	public void inputMedical() {
@@ -180,11 +180,11 @@ public class Pay {
 	}
 
 	public void setOvertimePay(double overForty) {
-		this.overtimePay = overForty * OVERTIME_RATE;
+		this.overtimePay = (overForty * perHour * OVERTIME_RATE); // fix
 	}
 
 	public double getOvertimePay() {
-		return this.overtimePay;
+		return this.overtimePay; //returning OT hours * 1.5, fix
 	}
 
 	public void setTotalDeductions() {
