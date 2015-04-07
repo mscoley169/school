@@ -6,6 +6,8 @@
 
 package edu.nashcc.camera;
 
+import java.text.DecimalFormat;
+
 public class DigitalCamera {
 
 	String brand;
@@ -22,6 +24,8 @@ public class DigitalCamera {
 		else {
 			this.megapixels = megapixels;
 		}
+		setPrice(megapixels);
+
 	}
 	
 	
@@ -50,15 +54,18 @@ public class DigitalCamera {
 		
 	}
 	
+
 	public String displayData(){
 		StringBuilder sb = new StringBuilder();
-		sb.append("Brand:     \t" + brand + "\n");
-		sb.append("Resolution:\t" + megapixels + "\n");
-		sb.append("Price:     \t" + price + "\n");
+		sb.append("Brand:     \t" + getBrand() + "\n");
+		sb.append("Resolution:\t" + getMegapixels() + "\n");
+		sb.append("Price:     \t" + decForm(getPrice()) + "\n");
 		return sb.toString();
 	}
 	
-	
-	
+	public String decForm(double decimal) {
+		DecimalFormat formatter = new DecimalFormat("$#.00");
+		return formatter.format(decimal);
+	}
 	
 }

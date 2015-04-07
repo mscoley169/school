@@ -41,14 +41,15 @@ public class Pay {
 																// not working
 																
 		// testing stuff -- getGrossPay() returns 0.0, need to fix
-		System.out.println(pay1.getGrossPay());
-		System.out.println(pay1.getHoursWorked());
-		System.out.println(pay1.getSkillLevelPay());
-		System.out.println(pay1.perHour);
-		System.out.println(pay1.getMedCost());
-		System.out.println(pay1.getDentalCost());
-		System.out.println(pay1.getDisCost());
-		System.out.println(pay1.getRetireCost());
+		System.out.println("grossPay: " + pay1.getGrossPay());
+		System.out.println("hoursWorked: " + pay1.getHoursWorked());
+		System.out.println("skillLevelPay: " + pay1.getSkillLevelPay());
+		System.out.println("perHour: " + pay1.perHour);
+		System.out.println("medCost: " + pay1.getMedCost());
+		System.out.println("dentCost: " + pay1.getDentalCost());
+		System.out.println("disCost: " + pay1.getDisCost());
+		System.out.println("retireCost: " + pay1.getRetireCost());
+		
 
 	}
 
