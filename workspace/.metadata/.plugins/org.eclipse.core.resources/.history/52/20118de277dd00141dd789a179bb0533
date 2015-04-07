@@ -1,0 +1,27 @@
+package edu.nashcc.catering;
+
+import javax.swing.JOptionPane;
+
+public class CarlysEventPrice {
+
+	public static void main(String[] args) {
+
+		// motto from ch1: "Carly's makes the food that makies it a party!"
+		int guests = Integer.parseInt(JOptionPane.showInputDialog(null,
+				"Enter the number of guests: "));
+		double pricePerGuest = 35;
+		double totalCost = guests * pricePerGuest;
+		boolean isLargeEvent;
+
+		if (guests >= 50) {
+			isLargeEvent = true;
+		} else {
+			isLargeEvent = false;
+		}
+		JOptionPane.showMessageDialog(null, "Total guests: \t" + guests + "\n"
+				+ "Price per guest: \t" + pricePerGuest + "\n"
+				+ "Total Cost: \t" + totalCost + "\n" + "Large Event: \t"
+				+ isLargeEvent);
+	}
+
+}
