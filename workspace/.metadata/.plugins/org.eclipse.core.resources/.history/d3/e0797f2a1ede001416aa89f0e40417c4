@@ -10,17 +10,6 @@ import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 
-/* TODO:
- * 	display:
- * 		hoursWorked
- * 		perHour
- * 		regular pay pre-OT
- *		OT pay
- *		gross pay
- *		total itemized deductions (if deductions > gross, error)
- *		net pay
- */
-
 public class Pay {
 
 	String skillLevel;
@@ -195,11 +184,11 @@ public class Pay {
 	}
 
 	public void setOvertimePay(double overForty) {
-		this.overtimePay = (overForty * perHour * OVERTIME_RATE); 
+		this.overtimePay = (overForty * perHour * OVERTIME_RATE); // fix
 	}
 
 	public double getOvertimePay() {
-		return this.overtimePay; //returning OT hours * 1.5
+		return this.overtimePay; //returning OT hours * 1.5, fix
 	}
 
 	public void setTotalDeductions() {
@@ -219,7 +208,7 @@ public class Pay {
 		return this.netPay;
 	}
 	public static String decForm(double decimal) {
-		DecimalFormat formatter = new DecimalFormat("$#,###.00");
+		DecimalFormat formatter = new DecimalFormat("$#.00");
 		return formatter.format(decimal);
 	}
 }

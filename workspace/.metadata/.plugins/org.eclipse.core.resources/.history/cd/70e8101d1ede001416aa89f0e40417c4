@@ -6,20 +6,7 @@
 
 package edu.nashcc.pay;
 
-import java.text.DecimalFormat;
-
 import javax.swing.JOptionPane;
-
-/* TODO:
- * 	display:
- * 		hoursWorked
- * 		perHour
- * 		regular pay pre-OT
- *		OT pay
- *		gross pay
- *		total itemized deductions (if deductions > gross, error)
- *		net pay
- */
 
 public class Pay {
 
@@ -54,18 +41,18 @@ public class Pay {
 
 																
 		// testing stuff -- getGrossPay() returns 0.0, need to fix
-		System.out.println("grossPay: " + decForm(pay1.getGrossPay()));
+		System.out.println("grossPay: " + pay1.getGrossPay());
 		System.out.println("hoursWorked: " + pay1.getHoursWorked());
 		System.out.println("skillLevelPay: " + pay1.getSkillLevelPay());
-		System.out.println("perHour: " + decForm(pay1.perHour));
-		System.out.println("medCost: " + decForm(pay1.getMedCost()));
-		System.out.println("dentCost: " + decForm(pay1.getDentalCost()));
-		System.out.println("disCost: " + decForm(pay1.getDisCost()));
-		System.out.println("retireCost: " + decForm(pay1.getRetireCost()));
-		System.out.println("OT pay: " + decForm(pay1.getOvertimePay()));
+		System.out.println("perHour: " + pay1.perHour);
+		System.out.println("medCost: " + pay1.getMedCost());
+		System.out.println("dentCost: " + pay1.getDentalCost());
+		System.out.println("disCost: " + pay1.getDisCost());
+		System.out.println("retireCost: " + pay1.getRetireCost());
+		System.out.println("OT pay: " + pay1.getOvertimePay());
 		pay1.setTotalDeductions();
 		pay1.setNetPay();
-		System.out.println("Net pay: " + decForm(pay1.getNetPay()));
+		System.out.println("Net pay: " + pay1.getNetPay());
 		
 
 	}
@@ -195,11 +182,11 @@ public class Pay {
 	}
 
 	public void setOvertimePay(double overForty) {
-		this.overtimePay = (overForty * perHour * OVERTIME_RATE); 
+		this.overtimePay = (overForty * perHour * OVERTIME_RATE); // fix
 	}
 
 	public double getOvertimePay() {
-		return this.overtimePay; //returning OT hours * 1.5
+		return this.overtimePay; //returning OT hours * 1.5, fix
 	}
 
 	public void setTotalDeductions() {
@@ -217,9 +204,5 @@ public class Pay {
 
 	public double getNetPay() {
 		return this.netPay;
-	}
-	public static String decForm(double decimal) {
-		DecimalFormat formatter = new DecimalFormat("$#,###.00");
-		return formatter.format(decimal);
 	}
 }
