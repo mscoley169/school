@@ -42,10 +42,10 @@ public class Scholarship {
 	}
 	
 	public static void successMsg(){
-		JOptionPane.showMessageDialog(null, "Scholarship Candidate");
+		System.out.println("Scholarship Candidate");
 	}
 	public static void failureMsg(){
-		JOptionPane.showMessageDialog(null, "Not a candidate.");
+		System.out.println("Not a candidate.");
 	}
 	
 }
