@@ -51,7 +51,6 @@ public class Pay {
 		System.out.println("retireCost: " + pay1.getRetireCost());
 		System.out.println("OT pay: " + pay1.getOvertimePay());
 		pay1.setTotalDeductions();
-		pay1.setNetPay();
 		System.out.println("Net pay: " + pay1.getNetPay());
 		
 

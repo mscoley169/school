@@ -50,9 +50,6 @@ public class Pay {
 		System.out.println("disCost: " + pay1.getDisCost());
 		System.out.println("retireCost: " + pay1.getRetireCost());
 		System.out.println("OT pay: " + pay1.getOvertimePay());
-		pay1.setTotalDeductions();
-		pay1.setNetPay();
-		System.out.println("Net pay: " + pay1.getNetPay());
 		
 
 	}
@@ -98,7 +95,8 @@ public class Pay {
 		medical = JOptionPane
 				.showInputDialog(null,
 						"Do you want to deduct medical insurance from your paycheck for $32.50? (Y/N)");
-		switch (medical.substring(0, 1).toUpperCase()) {
+		medical.toUpperCase();
+		switch (medical.substring(0)) {
 		case "Y":
 			this.medCost = 32.5;
 			break;
@@ -116,7 +114,8 @@ public class Pay {
 		dental = JOptionPane
 				.showInputDialog(null,
 						"Do you want to deduct dental insurance from your paycheck for $20.00? (Y/N)");
-		switch (dental.substring(0, 1).toUpperCase()) {
+		dental.toUpperCase();
+		switch (dental.substring(0)) {
 		case "Y":
 			this.dentCost = 20.0;
 			break;
@@ -134,7 +133,8 @@ public class Pay {
 		disability = JOptionPane.showInputDialog(null,
 				"Do you want to deduct long-term disability insurance "
 						+ "from your paycheck for $10.00? (Y/N)");
-		switch (disability.substring(0, 1).toUpperCase()) {
+		disability.toUpperCase();
+		switch (disability.substring(0)) {
 		case "Y":
 			this.disCost = 10.0;
 			break;
@@ -152,7 +152,7 @@ public class Pay {
 		retirement = JOptionPane
 				.showInputDialog(null,
 						"Do you want to participate in a retirement plan of 3% per paycheck? (Y/N)");
-		switch (retirement.substring(0, 1).toUpperCase()) {
+		switch (retirement.substring(0)) {
 		case "Y":
 			this.retireCost = grossPay * 0.03;
 			break;

@@ -50,8 +50,6 @@ public class Pay {
 		System.out.println("disCost: " + pay1.getDisCost());
 		System.out.println("retireCost: " + pay1.getRetireCost());
 		System.out.println("OT pay: " + pay1.getOvertimePay());
-		pay1.setTotalDeductions();
-		pay1.setNetPay();
 		System.out.println("Net pay: " + pay1.getNetPay());
 		
 
@@ -152,7 +150,7 @@ public class Pay {
 		retirement = JOptionPane
 				.showInputDialog(null,
 						"Do you want to participate in a retirement plan of 3% per paycheck? (Y/N)");
-		switch (retirement.substring(0, 1).toUpperCase()) {
+		switch (retirement.substring(0)) {
 		case "Y":
 			this.retireCost = grossPay * 0.03;
 			break;
