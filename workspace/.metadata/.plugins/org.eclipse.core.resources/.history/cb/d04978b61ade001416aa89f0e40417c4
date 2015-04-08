@@ -21,8 +21,6 @@ public class Pay {
 		pay1.inputSkillLevel();
 		pay1.inputHoursWorked();
 		pay1.getSkillLevelPay();
-		pay1.setGrossPay(pay1.hoursWorked);
-		
 		switch (pay1.getSkillLevel()) {
 		case 3:
 			pay1.inputMedical();
@@ -39,6 +37,8 @@ public class Pay {
 			break;
 		}
 
+		pay1.setGrossPay(pay1.hoursWorked); // pay1.setGrossPay(pay1.getHoursWorked()
+																// not working
 																
 		// testing stuff -- getGrossPay() returns 0.0, need to fix
 		System.out.println("grossPay: " + pay1.getGrossPay());
@@ -154,7 +154,7 @@ public class Pay {
 						"Do you want to participate in a retirement plan of 3% per paycheck? (Y/N)");
 		switch (retirement.substring(0, 1).toUpperCase()) {
 		case "Y":
-			this.retireCost = this.grossPay * 0.03;
+			this.retireCost = grossPay * 0.03;
 			break;
 		default:
 			this.retireCost = 0;
