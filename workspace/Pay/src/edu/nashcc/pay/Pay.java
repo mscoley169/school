@@ -10,19 +10,14 @@ import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 
-/* TODO:
- * 	display:
- * 		hoursWorked
- * 		perHour
- * 		regular pay pre-OT
- *		OT pay
- *		gross pay
- *		total itemized deductions (if deductions > gross, error)
- *		net pay
- */
-
 public class Pay {
 
+
+	/*TODO:
+	 * 		- move variables to appropriate scope
+	 * 		- general clean up of sloppy code
+	 */
+	
 	String skillLevel;
 	String medical, dental, disability, retirement;
 	double medCost, dentCost, disCost, retireCost, totalDeductions;
@@ -30,12 +25,16 @@ public class Pay {
 	final double OVERTIME_RATE = 1.5D;
 
 	public static void main(String[] args) {
+		
+		// instantiate Pay object
 		Pay pay1 = new Pay();
+		// run input methods
 		pay1.inputSkillLevel();
 		pay1.inputHoursWorked();
 		pay1.getSkillLevelPay();
-		pay1.setGrossPay(pay1.hoursWorked);
 		
+		pay1.setGrossPay(pay1.hoursWorked);
+		// determines what insurance questions to ask
 		switch (pay1.getSkillLevel()) {
 		case 3:
 			pay1.inputMedical();
@@ -52,9 +51,27 @@ public class Pay {
 			break;
 		}
 
-																
-		// testing stuff -- getGrossPay() returns 0.0, need to fix
-		System.out.println("grossPay: " + decForm(pay1.getGrossPay()));
+		//set deductions and pay
+		pay1.setTotalDeductions();
+		pay1.setNetPay();
+		
+		// if gross pay < deductions, error message
+		if(pay1.errorMsg() == true){
+			JOptionPane.showMessageDialog(null, "Error: Gross pay is less than total deductions");
+		}
+		else{
+			JOptionPane.showMessageDialog(null, 
+				  "Hours Worked:                     " + (pay1.getHoursWorked())
+				+ "\nPer Hour:                                " + decForm(pay1.perHour)
+				+ "\nPay pre-OT:                           " + decForm(pay1.getGrossPay() - pay1.getOvertimePay())
+				+ "\nOvertime pay:                       " + decForm(pay1.getOvertimePay())
+				+ "\nGross pay:                             " + decForm(pay1.getGrossPay())
+				+ "\nDeductions:                          " + decForm(pay1.totalDeductions)
+				+ "\nNet pay:                                 " + decForm(pay1.getNetPay()));
+		}
+		
+		// testing stuff
+	/*	System.out.println("grossPay: " + decForm(pay1.getGrossPay()));
 		System.out.println("hoursWorked: " + pay1.getHoursWorked());
 		System.out.println("skillLevelPay: " + pay1.getSkillLevelPay());
 		System.out.println("perHour: " + decForm(pay1.perHour));
@@ -63,10 +80,10 @@ public class Pay {
 		System.out.println("disCost: " + decForm(pay1.getDisCost()));
 		System.out.println("retireCost: " + decForm(pay1.getRetireCost()));
 		System.out.println("OT pay: " + decForm(pay1.getOvertimePay()));
-		pay1.setTotalDeductions();
-		pay1.setNetPay();
+		//pay1.setTotalDeductions();
+		//pay1.setNetPay();
 		System.out.println("Net pay: " + decForm(pay1.getNetPay()));
-		
+	*/	
 
 	}
 
@@ -218,6 +235,16 @@ public class Pay {
 	public double getNetPay() {
 		return this.netPay;
 	}
+	
+	public boolean errorMsg(){
+		if(this.grossPay < this.totalDeductions){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
 	public static String decForm(double decimal) {
 		DecimalFormat formatter = new DecimalFormat("$#,###.00");
 		return formatter.format(decimal);
