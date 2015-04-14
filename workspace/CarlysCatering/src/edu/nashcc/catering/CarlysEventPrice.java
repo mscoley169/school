@@ -6,7 +6,7 @@ public class CarlysEventPrice {
 
 	public static void main(String[] args) {
 
-		// motto from ch1: "Carly's makes the food that makies it a party!"
+		// motto from ch1: "Carly's makes the food that makes it a party!"
 		int guests = Integer.parseInt(JOptionPane.showInputDialog(null,
 				"Enter the number of guests: "));
 		double pricePerGuest = 35;
