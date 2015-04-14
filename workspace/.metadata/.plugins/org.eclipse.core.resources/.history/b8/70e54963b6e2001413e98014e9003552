@@ -1,0 +1,10 @@
+package edu.nashcc.ohms;
+
+public class OhmsLaw {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
