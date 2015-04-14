@@ -58,7 +58,7 @@ public class DigitalCamera {
 	public String displayData(){
 		StringBuilder sb = new StringBuilder();
 		sb.append("Brand:     \t" + getBrand() + "\n");
-		sb.append("Resolution:     \t" + getMegapixels() + "\n");
+		sb.append("Resolution:\t" + getMegapixels() + "\n");
 		sb.append("Price:     \t" + decForm(getPrice()) + "\n");
 		return sb.toString();
 	}
