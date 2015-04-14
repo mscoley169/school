@@ -66,7 +66,7 @@ public class Pay {
 				+ "\nPay pre-OT:                           " + decForm(pay1.getGrossPay() - pay1.getOvertimePay())
 				+ "\nOvertime pay:                       " + decForm(pay1.getOvertimePay())
 				+ "\nGross pay:                             " + decForm(pay1.getGrossPay())
-				+ "\nDeductions:                          " + decForm(pay1.totalDeductions)
+				+ "\nDeductions:                           " + decForm(pay1.totalDeductions)
 				+ "\nNet pay:                                  " + decForm(pay1.getNetPay()));
 		}
 		

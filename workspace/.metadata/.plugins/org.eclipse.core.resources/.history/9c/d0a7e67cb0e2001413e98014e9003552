@@ -62,12 +62,12 @@ public class Pay {
 		else{
 			JOptionPane.showMessageDialog(null, 
 				  "Hours Worked:                     " + (pay1.getHoursWorked())
-				+ "\nPer Hour:                               " + decForm(pay1.perHour)
+				+ "\nPer Hour:                                " + decForm(pay1.perHour)
 				+ "\nPay pre-OT:                           " + decForm(pay1.getGrossPay() - pay1.getOvertimePay())
 				+ "\nOvertime pay:                       " + decForm(pay1.getOvertimePay())
 				+ "\nGross pay:                             " + decForm(pay1.getGrossPay())
 				+ "\nDeductions:                          " + decForm(pay1.totalDeductions)
-				+ "\nNet pay:                                  " + decForm(pay1.getNetPay()));
+				+ "\nNet pay:                                 " + decForm(pay1.getNetPay()));
 		}
 		
 		// testing stuff
@@ -246,7 +246,7 @@ public class Pay {
 	}
 	
 	public static String decForm(double decimal) {
-		DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+		DecimalFormat formatter = new DecimalFormat("$#,###.00");
 		return formatter.format(decimal);
 	}
 }
