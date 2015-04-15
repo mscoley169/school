@@ -21,13 +21,16 @@ public class Event {
 		this.guests = guests;
 	}
 	public Event(int guests, String eventID){
-		this.guests = guests;
-		this.eventID = eventID;
+		setGuests(guests);
+		setEventID(eventID);
 	}
 	
 	public String getEventID(){
 		this.eventID = JOptionPane.showInputDialog(null, "Enter the event ID: ");
 		return this.eventID;
+	}
+	public void setEventID(String eventID){
+		this.eventID = eventID;
 	}
 	
 	public double getPricePerGuest() {
@@ -69,14 +72,22 @@ public class Event {
 		return guests;
 	}
 	
+	public String getMotto(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("**************************************************\n");
+		sb.append("Carly's makes the food that makes it a party!\n");
+		sb.append("**************************************************\n");
+		return sb.toString();
+	}
+	
 	public String displayData(){
 		StringBuilder sb = new StringBuilder();
-		sb.append("Carly's makes the food that makes it a party!\n");
-		sb.append("Event ID: \t" + eventID);
-		sb.append("\nTotal guests: \t" + guests);
-		sb.append("\nPrice per guest: \t" + decForm(pricePerGuest));
-		sb.append("\nTotal Cost: \t" + decForm(getTotalCost()));
-		sb.append("\nLarge Event: \t" + isLargeEvent);
+		sb.append(getMotto());
+		sb.append("\nEvent ID:                 " + eventID);
+		sb.append("\nTotal guests:         " + guests);
+		sb.append("\nPrice per guest:   " + decForm(pricePerGuest));
+		sb.append("\nTotal Cost:             " + decForm(getTotalCost()));
+		sb.append("\nLarge Event:          " + isLargeEvent);
 		return sb.toString();
 		}
 	
