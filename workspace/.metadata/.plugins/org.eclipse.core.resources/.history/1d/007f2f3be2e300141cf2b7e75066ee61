@@ -82,7 +82,7 @@ public class Event {
 		sb.append(getMotto());
 		sb.append("\nEvent ID:                 " + eventID);
 		sb.append("\nTotal guests:         " + this.guests);
-		sb.append("\nPrice per guest:   " + decForm(getPricePerGuest()));
+		sb.append("\nPrice per guest:   " + decForm(PRICE_PER_GUEST));
 		sb.append("\nTotal Cost:             " + decForm(getTotalCost()));
 		sb.append("\nLarge Event:          " + isLargeEvent());
 		return sb.toString();

@@ -7,9 +7,7 @@ import javax.swing.JOptionPane;
 public class Event {
 
 
-	final double PPG_LOW = 32;
-	final double PPG_HIGH = 35;
-	double pricePerGuest;
+	final double PRICE_PER_GUEST = 35;
 	int guests;
 	double totalCost;
 	String eventID;
@@ -33,11 +31,7 @@ public class Event {
 	}
 	
 	public final double getPricePerGuest() {
-		if(this.isLargeEvent()) {
-			return this.pricePerGuest = PPG_LOW;
-		} else {
-			return this.pricePerGuest = PPG_HIGH;
-		}
+		return PRICE_PER_GUEST;
 	}
 
 	public int getGuests() {
@@ -51,11 +45,9 @@ public class Event {
 		return this.totalCost;
 	}
 	public void setTotalCost(int guests) {
-		if(this.isLargeEvent()) {
-			this.totalCost = PPG_LOW * guests;
-		} else {
-			this.totalCost = PPG_HIGH * guests;
-		}
+		double total;
+		total = guests * this.PRICE_PER_GUEST;
+		this.totalCost = total;
 	}
 	
 	public boolean isLargeEvent(){
@@ -82,9 +74,9 @@ public class Event {
 		sb.append(getMotto());
 		sb.append("\nEvent ID:                 " + eventID);
 		sb.append("\nTotal guests:         " + this.guests);
-		sb.append("\nPrice per guest:   " + decForm(getPricePerGuest()));
+		sb.append("\nPrice per guest:   " + decForm(PRICE_PER_GUEST));
 		sb.append("\nTotal Cost:             " + decForm(getTotalCost()));
-		sb.append("\nLarge Event:          " + isLargeEvent());
+		sb.append("\nLarge Event:          " + isLargeEvent);
 		return sb.toString();
 		}
 	
