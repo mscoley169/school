@@ -5,11 +5,14 @@ import javax.swing.JOptionPane;
 public class EventDemo {
 
 	public static void main(String[] args) {
-		Event event1 = new Event(); // blank constructor calls getInputGuests() 
-									// and getEventID() from Event.java
-		//event1.getInputGuests();
-		event1.isLargeEvent();
-		JOptionPane.showMessageDialog(null, event1.displayData());
+		
+		
+		
+		Event event2 = new Event(); 
+		event2.inputEventID();
+		event2.inputGuests();
+		event2.isLargeEvent();
+		JOptionPane.showMessageDialog(null, event2.displayData());
 
 
 	}

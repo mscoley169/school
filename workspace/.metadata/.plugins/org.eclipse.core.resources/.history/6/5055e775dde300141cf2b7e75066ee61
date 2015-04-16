@@ -7,22 +7,25 @@ import javax.swing.JOptionPane;
 public class Event {
 
 
-	final double PRICE_PER_GUEST = 35;
+	double pricePerGuest = 35;
 	int guests;
 	double totalCost;
 	String eventID;
 	boolean isLargeEvent;
 	
 	public Event(){
-		this.guests = 0;
-		this.eventID = "A000";
+		this.guests = getInputGuests();
+		this.eventID = getEventID();
 	}
-	public Event(String eventID, int guests){
-		setEventID(eventID);
+	public Event(int guests){
+		this.guests = guests;
+	}
+	public Event(int guests, String eventID){
 		setGuests(guests);
+		setEventID(eventID);
 	}
-
-	public String inputEventID(){
+	
+	public String getEventID(){
 		this.eventID = JOptionPane.showInputDialog(null, "Enter the event ID: ");
 		return this.eventID;
 	}
@@ -30,24 +33,24 @@ public class Event {
 		this.eventID = eventID;
 	}
 	
-	public final double getPricePerGuest() {
-		return PRICE_PER_GUEST;
+	public double getPricePerGuest() {
+		return pricePerGuest;
 	}
-
+	public void setPricePerGuest(double pricePerGuest) {
+		this.pricePerGuest = pricePerGuest;
+	}
 	public int getGuests() {
-		return this.guests;
+		return guests;
 	}
 	public void setGuests(int guests) {
-		setTotalCost(guests);
-		this.guests = guests;
+		this.guests = getInputGuests();
 	}
 	public double getTotalCost() {
-		return this.totalCost;
+		totalCost = this.guests * this.pricePerGuest;
+		return totalCost;
 	}
-	public void setTotalCost(int guests) {
-		double total;
-		total = guests * this.PRICE_PER_GUEST;
-		this.totalCost = total;
+	public void setTotalCost(double totalCost) {
+		this.totalCost = totalCost;
 	}
 	public void setLargeEvent(boolean isLargeEvent) {
 		this.isLargeEvent = isLargeEvent;
@@ -63,10 +66,9 @@ public class Event {
 		}
 	}
 	
-	public int inputGuests(){
+	public static int getInputGuests(){
 		int guests = Integer.parseInt(JOptionPane.showInputDialog(null,
 				"Enter the number of guests: "));
-		setGuests(guests);
 		return guests;
 	}
 	
@@ -82,8 +84,8 @@ public class Event {
 		StringBuilder sb = new StringBuilder();
 		sb.append(getMotto());
 		sb.append("\nEvent ID:                 " + eventID);
-		sb.append("\nTotal guests:         " + this.guests);
-		sb.append("\nPrice per guest:   " + decForm(PRICE_PER_GUEST));
+		sb.append("\nTotal guests:         " + guests);
+		sb.append("\nPrice per guest:   " + decForm(pricePerGuest));
 		sb.append("\nTotal Cost:             " + decForm(getTotalCost()));
 		sb.append("\nLarge Event:          " + isLargeEvent);
 		return sb.toString();
