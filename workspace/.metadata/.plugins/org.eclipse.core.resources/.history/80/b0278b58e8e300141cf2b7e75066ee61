@@ -27,13 +27,13 @@ public class EventDemo {
 		JOptionPane.showMessageDialog(
 				null,
 				event1.displayGuestsAndID() + "\n"
-						+ event2.displayGuestsAndID() + "\nLarger Event:\n"
+						+ event2.displayGuestsAndID() + "\n\nLarger Event:\n"
 						+ compareEvents(event1, event2).displayGuestsAndID()
-						+ "\n*************************\n" + event1.displayGuestsAndID() + "\n"
-						+ event3.displayGuestsAndID() + "\nLarger Event:\n"
+						+ "\n\n\n" + event1.displayGuestsAndID() + "\n"
+						+ event3.displayGuestsAndID() + "\n\nLarger Event:\n"
 						+ compareEvents(event1, event3).displayGuestsAndID()
-						+ "\n*************************\n" + event2.displayGuestsAndID() + "\n"
-						+ event3.displayGuestsAndID() + "\nLarger Event:\n"
+						+ "\n\n\n" + event2.displayGuestsAndID() + "\n"
+						+ event3.displayGuestsAndID() + "\n\nLarger Event:\n"
 						+ compareEvents(event2, event3).displayGuestsAndID());
 
 	}
