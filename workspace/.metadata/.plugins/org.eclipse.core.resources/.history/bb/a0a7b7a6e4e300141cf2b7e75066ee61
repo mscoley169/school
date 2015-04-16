@@ -1,0 +1,27 @@
+package edu.nashcc.catering;
+
+import javax.swing.JOptionPane;
+
+public class EventDemo {
+
+	public static void main(String[] args) {
+		
+		Event event1 = new Event();
+		event1.inputEventID();
+		event1.inputGuests();
+		event1.isLargeEvent();
+		
+		Event event2 = new Event(); 
+		event2.inputEventID();
+		event2.inputGuests();
+		event2.isLargeEvent();
+		
+		Event event3 = new Event();
+		event3.inputEventID();
+		event3.inputGuests();
+		//event3.isLargeEvent();
+		JOptionPane.showMessageDialog(null, event1.displayData() + "\n" + event2.displayData() + "\n" + event3.displayData());
+
+
+	}
+}

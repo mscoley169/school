@@ -44,8 +44,8 @@ public class Event {
 		return this.guests;
 	}
 	public void setGuests(int guests) {
-		setTotalCost(guests);
 		this.guests = guests;
+		setTotalCost(guests);
 	}
 	public double getTotalCost() {
 		return this.totalCost;
@@ -69,17 +69,8 @@ public class Event {
 		return guests;
 	}
 	
-	public String getMotto(){
-		StringBuilder sb = new StringBuilder();
-		sb.append("**************************************************\n");
-		sb.append("Carly's makes the food that makes it a party!\n");
-		sb.append("**************************************************\n");
-		return sb.toString();
-	}
-	
 	public String displayData(){
 		StringBuilder sb = new StringBuilder();
-		sb.append(getMotto());
 		sb.append("\nEvent ID:                 " + eventID);
 		sb.append("\nTotal guests:         " + this.guests);
 		sb.append("\nPrice per guest:   " + decForm(getPricePerGuest()));
@@ -87,6 +78,13 @@ public class Event {
 		sb.append("\nLarge Event:          " + isLargeEvent());
 		return sb.toString();
 		}
+	public String displayGuestsAndID(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("Event ID:                 " + eventID);
+		sb.append("\n");
+		sb.append("Total guests:         " + this.guests);
+		return sb.toString();
+	}
 	
 	public static String decForm(double decimal) {
 		DecimalFormat formatter = new DecimalFormat("$#,##0.00");

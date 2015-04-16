@@ -1,0 +1,52 @@
+package edu.nashcc.catering;
+
+import javax.swing.JOptionPane;
+
+public class EventDemo {
+
+	public static void main(String[] args) {
+		
+		Event event1 = new Event();
+		event1.inputEventID();
+		event1.inputGuests();
+		event1.isLargeEvent();
+		
+		Event event2 = new Event(); 
+		event2.inputEventID();
+		event2.inputGuests();
+		event2.isLargeEvent();
+		
+		Event event3 = new Event();
+		event3.inputEventID();
+		event3.inputGuests();
+		//event3.isLargeEvent();
+		JOptionPane.showMessageDialog(null, getMotto() + event1.displayData() + "\n" + event2.displayData() + "\n" + event3.displayData());
+
+		// compare
+		compareEvents(event1, event2);
+		compareEvents(event1, event3);
+		compareEvents(event2, event3).displayData();
+		
+		}
+	public static String getMotto(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("**************************************************\n");
+		sb.append("Carly's makes the food that makes it a party!\n");
+		sb.append("**************************************************\n");
+		return sb.toString();
+	}
+	public static Event compareEvents(Event e1, Event e2){
+		if(e2.guests >= e1.guests){
+			return e2;
+		}
+		else{
+			return e1;
+		}
+	}
+	public static String displayComparison(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("");
+		return sb.toString();
+	}
+	
+}
