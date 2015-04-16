@@ -22,9 +22,6 @@ public class OhmsLaw {
 		test.setUserInput();
 		System.out.println(test.getUserInput());
 		
-		int input = Integer.parseInt(test.getUserInput());
-		calc(input);
-		
 		//calc(Integer.parseInt(test.getUserInput()));
 		//test.calc(Integer.parseInt(getUserInput()));  // boo static
 	}
