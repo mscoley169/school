@@ -1,0 +1,96 @@
+package edu.nashcc.catering;
+
+import java.text.DecimalFormat;
+
+import javax.swing.JOptionPane;
+
+public class Event {
+
+
+	final double PRICE_PER_GUEST = 35;
+	int guests;
+	double totalCost;
+	String eventID;
+	boolean isLargeEvent;
+	
+	public Event(){
+		this.guests = 0;
+		this.eventID = "A000";
+	}
+	public Event(String eventID, int guests){
+		setEventID(eventID);
+		setGuests(guests);
+	}
+
+	public String inputEventID(){
+		this.eventID = JOptionPane.showInputDialog(null, "Enter the event ID: ");
+		return this.eventID;
+	}
+	public void setEventID(String eventID){
+		this.eventID = eventID;
+	}
+	
+	public final double getPricePerGuest() {
+		return PRICE_PER_GUEST;
+	}
+
+	public int getGuests() {
+		return this.guests;
+	}
+	public void setGuests(int guests) {
+		setTotalCost(guests);
+		this.guests = guests;
+	}
+	public double getTotalCost() {
+		return this.totalCost;
+	}
+	public void setTotalCost(int guests) {
+		double total;
+		total = guests * this.PRICE_PER_GUEST;
+		this.totalCost = total;
+	}
+	public void setLargeEvent(boolean isLargeEvent) {
+		this.isLargeEvent = isLargeEvent;
+	}
+	
+	public boolean isLargeEvent(){
+		if (guests >= 50) {
+			isLargeEvent = true;
+			return isLargeEvent;
+		} else {
+			isLargeEvent = false;
+			return isLargeEvent;
+		}
+	}
+	
+	public int inputGuests(){
+		int guests = Integer.parseInt(JOptionPane.showInputDialog(null,
+				"Enter the number of guests: "));
+		setGuests(guests);
+		return guests;
+	}
+	
+	public String getMotto(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("**************************************************\n");
+		sb.append("Carly's makes the food that makes it a party!\n");
+		sb.append("**************************************************\n");
+		return sb.toString();
+	}
+	
+	public String displayData(){
+		StringBuilder sb = new StringBuilder();
+		sb.append(getMotto());
+		sb.append("\nEvent ID:                 " + eventID);
+		sb.append("\nTotal guests:         " + this.guests);
+		sb.append("\nPrice per guest:   " + decForm(PRICE_PER_GUEST));
+		sb.append("\nTotal Cost:             " + decForm(getTotalCost()));
+		sb.append("\nLarge Event:          " + isLargeEvent);
+		return sb.toString();
+		}
+	
+	public static String decForm(double decimal) {
+		DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+		return formatter.format(decimal);
+	}
+}

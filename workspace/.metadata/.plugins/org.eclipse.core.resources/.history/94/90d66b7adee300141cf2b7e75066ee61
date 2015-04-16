@@ -6,14 +6,13 @@ public class EventDemo {
 
 	public static void main(String[] args) {
 		
-		Event event1 = new Event();
-		event1.isLargeEvent();
+		
 		
 		Event event2 = new Event(); 
 		event2.inputEventID();
 		event2.inputGuests();
 		event2.isLargeEvent();
-		JOptionPane.showMessageDialog(null, event1.displayData() + "\n" + event2.displayData());
+		JOptionPane.showMessageDialog(null, event2.displayData());
 
 
 	}
