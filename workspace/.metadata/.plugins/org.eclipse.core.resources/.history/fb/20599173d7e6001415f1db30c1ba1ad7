@@ -1,0 +1,24 @@
+package edu.nashcc.between;
+
+import javax.swing.JOptionPane;
+
+public class InBetween {
+
+	private int a, b;
+	
+	public static void main(String[] args) {
+		setA();
+		
+	}
+
+	public static String setUserInput(){
+		return JOptionPane.showInputDialog(null, "Enter a number:");
+	}
+	public void setA(){
+		this.a = Integer.parseInt(setUserInput());
+	}
+	public void setB(){
+		this.b = Integer.parseInt(setUserInput());
+	}
+	
+}
