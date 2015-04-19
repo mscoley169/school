@@ -24,7 +24,10 @@ public class OhmsLaw {
 		
 		int input = Integer.parseInt(test.getUserInput());
 		calc(input);
-		}
+		
+		//calc(Integer.parseInt(test.getUserInput()));
+		//test.calc(Integer.parseInt(getUserInput()));  // boo static
+	}
 	
 	public OhmsLaw(){
 		
@@ -43,25 +46,22 @@ public class OhmsLaw {
 		return this.userInput;
 	}
 
-	private double getCalcInput(String myPrompt){
-		return Double.parseDouble(JOptionPane.showInputDialog(null, myPrompt));
-	}
 	public double calc(int userInput){
 		double answer = 0;
 		switch(userInput) {
 		case 1:
-			current = getCalcInput("Enter the current: ");
-			resistance = getCalcInput("Enter the resistance: ");
+			current = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter the current: "));
+			resistance = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter the resistance: "));
 			answer = current * resistance;
 			break;
 		case 2:
-			voltage = getCalcInput("Enter the voltage: ");
-			resistance =  getCalcInput("Enter the resistance: ");
+			voltage = Double.parseDouble(JOptionPane.showInputDialog(null,"Enter the voltage: "));
+			resistance =  Double.parseDouble(JOptionPane.showInputDialog(null, "Enter the resistance: "));
 			answer = voltage / resistance;
 			break;
 		case 3:
-			voltage = getCalcInput("Enter the voltage: ");
-			current = getCalcInput("Enter the current: ");
+			voltage = Double.parseDouble(JOptionPane.showInputDialog(null,"Enter the voltage: "));
+			current = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter the current: "));
 			answer = voltage / current;
 			break;
 		//default: (error message?)

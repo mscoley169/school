@@ -24,7 +24,10 @@ public class OhmsLaw {
 		
 		int input = Integer.parseInt(test.getUserInput());
 		calc(input);
-		}
+		
+		//calc(Integer.parseInt(test.getUserInput()));
+		//test.calc(Integer.parseInt(getUserInput()));  // boo static
+	}
 	
 	public OhmsLaw(){
 		
@@ -54,8 +57,7 @@ public class OhmsLaw {
 			resistance = getCalcInput("Enter the resistance: ");
 			answer = current * resistance;
 			break;
-		case 2:
-			voltage = getCalcInput("Enter the voltage: ");
+		case 2:getCalcInput("Enter the voltage: ");
 			resistance =  getCalcInput("Enter the resistance: ");
 			answer = voltage / resistance;
 			break;
