@@ -5,26 +5,11 @@ import javax.swing.JOptionPane;
 public class OhmsLaw {
 
 /* TODO: 
- * 		- set maths up E = IR, I = E/R, R = E/I
  * 		- loop (do while?)
- * 		- move main() to separate class
- * 		- decision loop for repetitive use
- * 
  */
 	
 	private double voltage, current, resistance;
 	private String userInput;
-	
-	public static void main(String[] args) {
-		
-		// testy mctesterson
-		OhmsLaw test = new OhmsLaw();
-		test.setUserInput();
-		System.out.println(test.getUserInput());
-		
-		int input = Integer.parseInt(test.getUserInput());
-		calc(input);
-		}
 	
 	public OhmsLaw(){
 		
@@ -34,8 +19,9 @@ public class OhmsLaw {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Choose the value you wish to calculate: \n");
 		sb.append("1 - Voltage\n");
-		sb.append("2 - Current\n");
+		sb.append("2 - Current\n"); 
 		sb.append("3 - Resistance\n");
+		sb.append("\n\n0 - QUIT");
 		this.userInput = JOptionPane.showInputDialog(null, sb.toString());
 	}
 	
