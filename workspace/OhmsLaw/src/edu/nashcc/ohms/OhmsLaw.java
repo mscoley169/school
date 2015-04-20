@@ -15,13 +15,13 @@ public class OhmsLaw {
 		
 	}
 
-	public void setUserInput(){
+	public void displayUserOptions(){
 		StringBuilder sb = new StringBuilder();
 		sb.append("Choose the value you wish to calculate: \n");
 		sb.append("1 - Voltage\n");
 		sb.append("2 - Current\n"); 
 		sb.append("3 - Resistance\n");
-		sb.append("\n\n0 - QUIT");
+		sb.append("\n0 - QUIT");
 		this.userInput = JOptionPane.showInputDialog(null, sb.toString());
 	}
 	

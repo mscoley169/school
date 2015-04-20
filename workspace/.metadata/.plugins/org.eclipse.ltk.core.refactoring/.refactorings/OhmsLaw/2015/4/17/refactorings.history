@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;edu.nashcc.ohms.OhmsLaw.setUserInput()&apos; to &apos;displayUserOptions&apos;&#x0D;&#x0A;- Original project: &apos;OhmsLaw&apos;&#x0D;&#x0A;- Original element: &apos;edu.nashcc.ohms.OhmsLaw.setUserInput()&apos;&#x0D;&#x0A;- Renamed element: &apos;edu.nashcc.ohms.OhmsLaw.displayUserOptions()&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;setUserInput&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src&lt;edu.nashcc.ohms{OhmsLaw.java[OhmsLaw~setUserInput" name="displayUserOptions" references="true" stamp="1429561822763" version="1.0"/>
+</session>
