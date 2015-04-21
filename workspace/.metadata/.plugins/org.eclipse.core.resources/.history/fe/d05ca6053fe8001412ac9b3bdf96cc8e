@@ -1,14 +1,13 @@
-/*Name: Matthew S. Coley
- *Assignment: Ohms Law
- *Date: 21 April 2015
- */
-
 package edu.nashcc.ohms;
 
 import javax.swing.JOptionPane;
 
 public class OhmsLaw {
 
+/* TODO: 
+ * 		- loop (do while?)
+ */
+	
 	private double voltage, current, resistance;
 	private int userInput;
 	

@@ -19,8 +19,8 @@ public class Main {
 		// Then, get the next choice and repeat.
 		while(choice != 0) {
 			ohmsCalc.calc(choice);
-			JOptionPane.showMessageDialog(null, ohmsCalc.displayResults());
 			choice = (int) ohmsCalc.getCalcInput(options);
+			ohmsCalc.displayResults();
 		}
 	}
 }

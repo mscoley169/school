@@ -1,0 +1,23 @@
+package edu.nashcc.ohms;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		// testy mctesterson
+		OhmsLaw test = new OhmsLaw();
+		test.displayUserOptions();
+		
+		
+		int input;
+		do {
+			input = Integer.parseInt(test.displayUserOptions());
+			test.displayUserOptions(); //which sets userInput
+			JOptionPane.showMessageDialog(null, test.calc(input)); //display method not created yet
+			} while (input != 0);
+		
+	}
+
+}

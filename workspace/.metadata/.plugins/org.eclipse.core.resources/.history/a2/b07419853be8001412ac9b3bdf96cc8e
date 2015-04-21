@@ -1,14 +1,13 @@
-/*Name: Matthew S. Coley
- *Assignment: Ohms Law
- *Date: 21 April 2015
- */
-
 package edu.nashcc.ohms;
 
 import javax.swing.JOptionPane;
 
 public class OhmsLaw {
 
+/* TODO: 
+ * 		- loop (do while?)
+ */
+	
 	private double voltage, current, resistance;
 	private int userInput;
 	
@@ -25,19 +24,15 @@ public class OhmsLaw {
 		sb.append("\n0 - QUIT");
 		return sb.toString();
 	}
-
-	public String displayResults(){
-		StringBuilder sb = new StringBuilder();
-		sb.append("Voltage: ");
-		sb.append(getVoltage());
-		sb.append("\nCurrent: ");
-		sb.append(getCurrent());
-		sb.append("\nResistance: ");
-		sb.append(getResistance());
-		return sb.toString();
+	
+	public void setUserInput(){
+		
 	}
-
-	public double getCalcInput(String myPrompt){
+	public int getUserInput(){
+		return userInput;
+	}
+	
+	private double getCalcInput(String myPrompt){
 		return Double.parseDouble(JOptionPane.showInputDialog(null, myPrompt));
 	}
 	public double calc(int userInput){
@@ -47,19 +42,16 @@ public class OhmsLaw {
 			current = getCalcInput("Enter the current: ");
 			resistance = getCalcInput("Enter the resistance: ");
 			answer = current * resistance;
-			setVoltage(answer);
 			break;
 		case 2:
 			voltage = getCalcInput("Enter the voltage: ");
 			resistance =  getCalcInput("Enter the resistance: ");
 			answer = voltage / resistance;
-			setCurrent(answer);
 			break;
 		case 3:
 			voltage = getCalcInput("Enter the voltage: ");
 			current = getCalcInput("Enter the current: ");
 			answer = voltage / current;
-			setResistance(answer);
 			break;
 		//default: (error message?)
 		}
