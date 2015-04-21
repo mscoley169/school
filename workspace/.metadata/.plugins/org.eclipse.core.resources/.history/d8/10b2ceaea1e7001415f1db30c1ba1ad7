@@ -9,7 +9,7 @@ public class OhmsLaw {
  */
 	
 	private double voltage, current, resistance;
-	private int userInput;
+	//private String userInput;
 	
 	public OhmsLaw(){
 		
@@ -23,13 +23,6 @@ public class OhmsLaw {
 		sb.append("3 - Resistance\n");
 		sb.append("\n0 - QUIT");
 		return sb.toString();
-	}
-	
-	public void setUserInput(){
-		
-	}
-	public int getUserInput(){
-		return userInput;
 	}
 	
 	private double getCalcInput(String myPrompt){

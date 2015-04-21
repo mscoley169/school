@@ -9,29 +9,26 @@ public class OhmsLaw {
  */
 	
 	private double voltage, current, resistance;
-	private int userInput;
+	private String userInput;
 	
 	public OhmsLaw(){
 		
 	}
 
-	public String displayUserOptions(){
+	public void displayUserOptions(){
 		StringBuilder sb = new StringBuilder();
 		sb.append("Choose the value you wish to calculate: \n");
 		sb.append("1 - Voltage\n");
 		sb.append("2 - Current\n"); 
 		sb.append("3 - Resistance\n");
 		sb.append("\n0 - QUIT");
-		return sb.toString();
+		this.userInput = JOptionPane.showInputDialog(null, sb.toString());
 	}
 	
-	public void setUserInput(){
-		
+	public String getUserInput(){
+		return this.userInput;
 	}
-	public int getUserInput(){
-		return userInput;
-	}
-	
+
 	private double getCalcInput(String myPrompt){
 		return Double.parseDouble(JOptionPane.showInputDialog(null, myPrompt));
 	}
