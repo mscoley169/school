@@ -8,7 +8,9 @@ public class InBetween {
 	
 	public static void main(String[] args) {
 		
-		// instantiating InBetween object
+		// instantiating InBetween object and 
+		// using the set methods that calls 
+		// an input dialog
 		InBetween x = new InBetween();
 		x.setA();
 		x.setB();

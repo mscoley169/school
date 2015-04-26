@@ -1,0 +1,38 @@
+package edu.nashcc.college;
+
+import java.text.DecimalFormat;
+
+import javax.swing.JOptionPane;
+
+public class CollegeCost {
+
+	public static void main(String[] args) {
+
+		// get childAge input
+		int childAge;
+		childAge = Integer.parseInt(JOptionPane.showInputDialog(null,
+				"Enter the child's age: "));
+		// if the age is under 18, reprompt
+		if (childAge > 18) {
+			childAge = Integer.parseInt(JOptionPane.showInputDialog(null,
+					"Please enter an age under 18: "));
+		}
+
+		// calculate the number between age and 18
+		// for while loop
+		int remaining = 18 - childAge;
+
+		// assume $5k/year, 4 years, $20k needed at age 18
+		final int COST = 20000;
+
+		double perYear = COST / remaining;
+	
+		JOptionPane.showMessageDialog(null, "You need to save " + decForm(perYear)
+				+ " for " + remaining + "years.");
+
+	}
+	public static String decForm(double decimal) {
+		DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+		return formatter.format(decimal);
+	}
+}
