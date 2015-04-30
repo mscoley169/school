@@ -1,0 +1,49 @@
+package edu.nashcc.retire;
+
+import java.text.DecimalFormat;
+
+import javax.swing.JOptionPane;
+
+public class RetirementGoal {
+
+	public static void main(String[] args) {
+
+		// get input for years left and money saved per year	
+		int yearsLeft = Integer.parseInt(JOptionPane.showInputDialog(null,
+				"Enter the number of years you have until retirement: "));
+		double moneySaved = Integer.parseInt(JOptionPane.showInputDialog(null,
+				"Enter the amount of money you can save each year: "));
+		
+		// while loop to reprompt yearsLeft if a 
+		// value below 1 (0 or negative) is entered
+		while(yearsLeft < 1){
+			yearsLeft = Integer.parseInt(JOptionPane.showInputDialog(null,
+					"Please enter a number greater than 0 for retirement: "));
+		}
+		// while loop to reprompt moneySaved if a 
+		// value below 1 (0 or negative) is entered
+		while(moneySaved < 0){
+			moneySaved = Integer.parseInt(JOptionPane.showInputDialog(null,
+					"Please enter a number greater than $0.00: "));
+		}
+		
+		double totalSaved = yearsLeft * moneySaved;
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("You will have saved ");
+		sb.append(decForm(totalSaved));
+		sb.append(" after ");
+		sb.append(yearsLeft);
+		sb.append(" years.");
+		
+		JOptionPane.showMessageDialog(null, sb.toString());
+		
+		
+	}
+	
+	public static String decForm(double decimal) {
+		DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+		return formatter.format(decimal);
+	}
+
+}

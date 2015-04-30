@@ -1,0 +1,52 @@
+/*Name: Matthew S. Coley
+ *Assignment: Ch 6
+ *Date: 29 April 2015
+ */
+
+package edu.nashcc.purchase;
+
+import javax.swing.JOptionPane;
+
+public class CreatePurchase {
+
+	public static void main(String[] args) {
+
+		// instantiating purchase object
+		Purchase purchase1 = new Purchase(promptInvoice(), promptCost());
+
+		// while loop to determine, and re-set, an accepted invoice number
+		int num = Integer.parseInt(purchase1.getInvoiceNum());
+		while (num < 1000 || num > 8000) {
+			purchase1.setInvoiceNum(promptInvoice());
+		}
+		// while loop to determine, and re-set, a positive cost
+		double cost = purchase1.getCost();
+		while(cost > 0){
+			purchase1.setCost(promptCost());
+		}
+		
+		// StringBuilder and displaying results
+		StringBuilder sb = new StringBuilder();
+		sb.append("Invoice Number: ");
+		sb.append(purchase1.getInvoiceNum());
+		sb.append("\nCost: ");
+		sb.append(purchase1.getCost());
+		sb.append("\n Sales Tax: 5%");
+		
+		JOptionPane.showMessageDialog(null, sb.toString());
+		
+	}
+
+	public static String promptInvoice() {
+		String invoiceNum = JOptionPane.showInputDialog(null,
+				"Enter an invoice number between 1000 and 8000: ");
+		return invoiceNum;
+	}
+
+	public static double promptCost() {
+		double cost = Double.parseDouble(JOptionPane.showInputDialog(null,
+				"Enter the sales amount: "));
+		return cost;
+	}
+
+}

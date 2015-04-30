@@ -1,3 +1,8 @@
+/*Name: Matthew S. Coley
+ *Assignment: Ch 6
+ *Date: 29 April 2015
+ */
+
 package edu.nashcc.college;
 
 import java.text.DecimalFormat;

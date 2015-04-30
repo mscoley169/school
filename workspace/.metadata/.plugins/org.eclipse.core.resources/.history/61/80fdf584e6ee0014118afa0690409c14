@@ -1,0 +1,10 @@
+package edu.nashcc.purchase;
+
+public class CreatePurchase {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
