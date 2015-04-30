@@ -1,0 +1,85 @@
+package edu.nashcc.house;
+
+import java.text.DecimalFormat;
+
+import javax.swing.JOptionPane;
+
+public class HouseMain {
+
+	public static void main(String[] args) {
+
+		String userHouse = inputHouseType();
+		// if to determine valid input
+		int userOption = Integer.parseInt(userHouse);
+		if(userOption > 3 || userOption < 1){
+			JOptionPane.showMessageDialog(null, "Invalid Choice. Please try again.");
+			userHouse = inputHouseType();
+		}
+		
+		// switch to set house type
+		String houseType = "";
+		switch(userHouse){
+		case "1":
+			houseType = "Single Family";
+		case "2":
+			houseType = "Townhouse";
+		case "3":
+			houseType = "Condominium";
+			}
+		
+		double userPrice = inputPrice();
+		House test = new House(houseType, userPrice);
+
+		// switch to set minCost
+		double minCost = 0;
+		switch(userHouse){
+		case "1":
+			minCost = 150000;
+		case "2":
+			minCost = 110000;
+		case "3":
+			minCost = 95000;
+		}
+		
+		// testing 
+		System.out.println(test.getUserHouse());
+		System.out.println(decForm(test.getPrice()));
+		System.out.println(userHouse);
+		System.out.println(minCost);
+		
+	}
+
+	public static String inputHouseType(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("What Type of House Would you Like to Purchase?\n");
+		sb.append("1 - Single Family\n");
+		sb.append("2- Townhouse\n");
+		sb.append("3 - Condominium\n");
+		String houseType = JOptionPane.showInputDialog(null, sb.toString());
+		return houseType;
+	}
+	public static double inputPrice(){
+		double cost = Double.parseDouble(JOptionPane.showInputDialog(null, "How much can you afford? "));
+		return cost;
+	}
+	public static String displayResults(){
+		String placeholder = "";
+		return placeholder;
+	}
+	public static String costCheck(double cost, double minCost){
+		String costCheck = "";
+		if(cost < minCost){
+			costCheck = ("The desired house type is not available in your price range.");
+			}
+		else{
+			costCheck = "The desired house type is available in your price range";
+		}
+		return costCheck;
+	}
+	// decimal formatter
+	public static String decForm(double decimal) {
+		DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+		return formatter.format(decimal);
+	}
+	
+}

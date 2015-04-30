@@ -1,0 +1,48 @@
+package edu.nashcc.house;
+
+import javax.swing.JOptionPane;
+
+public class HouseMain {
+
+	public static void main(String[] args) {
+
+		String userHouse = inputHouseType();
+		double userPrice = inputPrice();
+		House test = new House(userHouse, userPrice);
+
+		switch(userHouse){
+		case "1":
+			double minCost = 150000;
+		case "2":
+			minCost = 110000;
+		case "3":
+			minCost = 95000;
+		}
+		
+	}
+
+	public static String inputHouseType(){
+		StringBuilder sb = new StringBuilder();
+		sb.append("What Type of House Would you Like to Purchase?\n");
+		sb.append("1 - Single Family\n");
+		sb.append("2- Town House\n");
+		sb.append("3 - Condominium\n");
+		String houseType = JOptionPane.showInputDialog(null, sb.toString());
+		return houseType;
+	}
+	public static double inputPrice(){
+		double cost = Double.parseDouble(JOptionPane.showInputDialog(null, "How much can you afford? "));
+		return cost;
+	}
+	public static String displayResults(){
+		String placeholder = "";
+		return placeholder;
+	}
+	public static String costCheck(double cost, double minCost){
+		if(cost < minCost){
+			String retry = JOptionPane.showInputDialog(null, "Invalid choice, please try again: ");
+			return retry;
+		}
+	}
+	
+}

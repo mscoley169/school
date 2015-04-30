@@ -1,0 +1,33 @@
+/*  Name: Matthew S. Coley
+ *  Assignment: chapter 5/6 test program
+ * Date: 30 April 2015
+*/
+
+package edu.nashcc.house;
+
+public class House {
+
+	private String userHouse;
+	private double price;
+	
+	public House(){
+		
+	}
+	public House(String userHouse, double price){
+		this.userHouse = userHouse;
+		this.price = price;
+	}
+	public String getUserHouse() {
+		return userHouse;
+	}
+	public void setUserHouse(String userHouse) {
+		this.userHouse = userHouse;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	
+}
