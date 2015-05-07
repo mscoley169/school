@@ -1,0 +1,29 @@
+package edu.nashcc.password;
+
+import javax.swing.JOptionPane;
+
+public class Password {
+
+	public static void main(String[] args) {
+
+		String password = promptUser();
+		int length = password.length();
+		if(length < 6 || length > 10){
+			errorMsg();
+			password = promptUser();
+			length = password.length();
+		}
+		System.out.println(password);
+		
+		
+	}
+
+	public static String promptUser(){
+		String input = JOptionPane.showInputDialog(null, "Enter Password: ");
+		return input;
+	}
+	public static void errorMsg(){
+		JOptionPane.showMessageDialog(null, "Invalid password. Please enter a password between 6-10 characters with no spaces");
+	}
+	
+}

@@ -1,0 +1,61 @@
+/*Name: Matthew S. Coley
+ * Assignment: ch7 programs
+ * 6 May 2015 
+ */
+package edu.nash.student;
+
+import javax.swing.JOptionPane;
+
+public class Student {
+
+	public static void main(String[] args) {
+
+		String name = promptUser("name");
+		String sID = promptUser("student ID");
+		String major = promptUser("major");
+		
+		
+		
+	} // end of main()
+
+	String name, sID, major;
+	// student constructor
+	public Student(){
+		
+	}
+	public Student(String name, String sID, String major){
+		this.name = name;
+		this.sID = sID;
+		this.major = major;
+	}
+	
+	// setters/getters
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getsID() {
+		return sID;
+	}
+	public void setsID(String sID) {
+		this.sID = sID;
+	}
+	public String getMajor() {
+		return major;
+	}
+	public void setMajor(String major) {
+		this.major = major;
+	}
+	public static void errorMsg() {
+		JOptionPane.showMessageDialog(null,
+				"Student ID numbers must be seven (7) digits.");
+	}
+
+	public static String promptUser(String prompt) {
+		String input = JOptionPane.showInputDialog(null, "Please enter the "
+				+ prompt + ": ");
+		return input;
+	}
+}

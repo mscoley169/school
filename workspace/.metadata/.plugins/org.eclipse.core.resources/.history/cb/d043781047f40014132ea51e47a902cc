@@ -1,0 +1,19 @@
+package edu.nashcc.password;
+
+import javax.swing.JOptionPane;
+
+public class Password {
+
+	public static void main(String[] args) {
+
+	String test = promptUser();
+	System.out.println(test);
+		
+	}
+
+	public static String promptUser(){
+		String input = JOptionPane.showInputDialog(null, "Enter Password: ");
+		return input;
+	}
+	
+}
